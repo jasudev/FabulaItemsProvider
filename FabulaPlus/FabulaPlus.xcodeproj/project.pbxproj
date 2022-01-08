@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4B4A0A542785349300F9AD40 /* ContentView_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A0A532785349300F9AD40 /* ContentView_iOS.swift */; };
+		4B4A0A582785349E00F9AD40 /* ContentView_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4A0A562785349E00F9AD40 /* ContentView_macOS.swift */; };
+		4B5D4F7727855AC900FCAAAD /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4F7627855AC900FCAAAD /* View+Extensions.swift */; };
+		4B5D4F7827855AC900FCAAAD /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5D4F7627855AC900FCAAAD /* View+Extensions.swift */; };
+		4B84E99B2787269900331D23 /* FabulaItemsProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 4B84E99A2787269900331D23 /* FabulaItemsProvider */; settings = {ATTRIBUTES = (Required, ); }; };
+		4B9D021927841995003E80B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D021627841995003E80B6 /* Assets.xcassets */; };
+		4B9D021A27841995003E80B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B9D021627841995003E80B6 /* Assets.xcassets */; };
+		4BAD0CB02782D69A007154C8 /* FabulaPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD0CA02782D697007154C8 /* FabulaPlusApp.swift */; };
+		4BAD0CB12782D69A007154C8 /* FabulaPlusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD0CA02782D697007154C8 /* FabulaPlusApp.swift */; };
+		4BAD0CC42782D74E007154C8 /* FabulaItemsProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 4BAD0CC32782D74E007154C8 /* FabulaItemsProvider */; };
+		4BC41894278468E00092E570 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC41893278468E00092E570 /* HomeView.swift */; };
+		4BC41895278468E00092E570 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC41893278468E00092E570 /* HomeView.swift */; };
+		4BC41898278476630092E570 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC41897278476630092E570 /* NavigationBarModifier.swift */; };
+		4BC4189B2784788B0092E570 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4189A2784788B0092E570 /* ItemRowView.swift */; };
+		4BC4189C2784788B0092E570 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4189A2784788B0092E570 /* ItemRowView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4B4A0A532785349300F9AD40 /* ContentView_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_iOS.swift; sourceTree = "<group>"; };
+		4B4A0A562785349E00F9AD40 /* ContentView_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView_macOS.swift; sourceTree = "<group>"; };
+		4B521F082787215800AA7815 /* FabulaItemsProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = FabulaItemsProvider; path = ..; sourceTree = "<group>"; };
+		4B5D4F7627855AC900FCAAAD /* View+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		4B9D021627841995003E80B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4BAD0CA02782D697007154C8 /* FabulaPlusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabulaPlusApp.swift; sourceTree = "<group>"; };
+		4BAD0CA72782D69A007154C8 /* Fabula+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fabula+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BAD0CAD2782D69A007154C8 /* Fabula+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fabula+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BAD0CAF2782D69A007154C8 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		4BC41893278468E00092E570 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4BC41897278476630092E570 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		4BC4189A2784788B0092E570 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4BAD0CA42782D69A007154C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B84E99B2787269900331D23 /* FabulaItemsProvider in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BAD0CAA2782D69A007154C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BAD0CC42782D74E007154C8 /* FabulaItemsProvider in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B4A0A4E27852CE700F9AD40 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				4BC41897278476630092E570 /* NavigationBarModifier.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		4B4A0A4F278530B400F9AD40 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4B5D4F7627855AC900FCAAAD /* View+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4B521F072787215800AA7815 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4B521F082787215800AA7815 /* FabulaItemsProvider */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		4B9D02142784196D003E80B6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B9D021627841995003E80B6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4BAD0C9A2782D697007154C8 = {
+			isa = PBXGroup;
+			children = (
+				4B521F072787215800AA7815 /* Packages */,
+				4BAD0C9F2782D697007154C8 /* Shared */,
+				4BAD0CAE2782D69A007154C8 /* macOS */,
+				4BAD0CA82782D69A007154C8 /* Products */,
+				4BAD0CC02782D747007154C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4BAD0C9F2782D697007154C8 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				4BAD0CA02782D697007154C8 /* FabulaPlusApp.swift */,
+				4B4A0A532785349300F9AD40 /* ContentView_iOS.swift */,
+				4B4A0A562785349E00F9AD40 /* ContentView_macOS.swift */,
+				4BC4189A2784788B0092E570 /* ItemRowView.swift */,
+				4BC41893278468E00092E570 /* HomeView.swift */,
+				4B4A0A4F278530B400F9AD40 /* Extensions */,
+				4B4A0A4E27852CE700F9AD40 /* Utils */,
+				4B9D02142784196D003E80B6 /* Resources */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		4BAD0CA82782D69A007154C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4BAD0CA72782D69A007154C8 /* Fabula+.app */,
+				4BAD0CAD2782D69A007154C8 /* Fabula+.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4BAD0CAE2782D69A007154C8 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				4BAD0CAF2782D69A007154C8 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		4BAD0CC02782D747007154C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4BAD0CA62782D69A007154C8 /* FabulaPlus (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BAD0CB82782D69A007154C8 /* Build configuration list for PBXNativeTarget "FabulaPlus (iOS)" */;
+			buildPhases = (
+				4BAD0CA32782D69A007154C8 /* Sources */,
+				4BAD0CA42782D69A007154C8 /* Frameworks */,
+				4BAD0CA52782D69A007154C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FabulaPlus (iOS)";
+			packageProductDependencies = (
+				4B84E99A2787269900331D23 /* FabulaItemsProvider */,
+			);
+			productName = "FabulaItemsContainer (iOS)";
+			productReference = 4BAD0CA72782D69A007154C8 /* Fabula+.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4BAD0CAC2782D69A007154C8 /* FabulaPlus (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BAD0CBB2782D69A007154C8 /* Build configuration list for PBXNativeTarget "FabulaPlus (macOS)" */;
+			buildPhases = (
+				4BAD0CA92782D69A007154C8 /* Sources */,
+				4BAD0CAA2782D69A007154C8 /* Frameworks */,
+				4BAD0CAB2782D69A007154C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FabulaPlus (macOS)";
+			packageProductDependencies = (
+				4BAD0CC32782D74E007154C8 /* FabulaItemsProvider */,
+			);
+			productName = "FabulaItemsContainer (macOS)";
+			productReference = 4BAD0CAD2782D69A007154C8 /* Fabula+.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4BAD0C9B2782D697007154C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					4BAD0CA62782D69A007154C8 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+					4BAD0CAC2782D69A007154C8 = {
+						CreatedOnToolsVersion = 13.2;
+					};
+				};
+			};
+			buildConfigurationList = 4BAD0C9E2782D697007154C8 /* Build configuration list for PBXProject "FabulaPlus" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4BAD0C9A2782D697007154C8;
+			productRefGroup = 4BAD0CA82782D69A007154C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BAD0CA62782D69A007154C8 /* FabulaPlus (iOS) */,
+				4BAD0CAC2782D69A007154C8 /* FabulaPlus (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4BAD0CA52782D69A007154C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B9D021927841995003E80B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BAD0CAB2782D69A007154C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B9D021A27841995003E80B6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4BAD0CA32782D69A007154C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC41894278468E00092E570 /* HomeView.swift in Sources */,
+				4B4A0A542785349300F9AD40 /* ContentView_iOS.swift in Sources */,
+				4BC4189B2784788B0092E570 /* ItemRowView.swift in Sources */,
+				4BC41898278476630092E570 /* NavigationBarModifier.swift in Sources */,
+				4B5D4F7727855AC900FCAAAD /* View+Extensions.swift in Sources */,
+				4BAD0CB02782D69A007154C8 /* FabulaPlusApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BAD0CA92782D69A007154C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BC41895278468E00092E570 /* HomeView.swift in Sources */,
+				4BC4189C2784788B0092E570 /* ItemRowView.swift in Sources */,
+				4B4A0A582785349E00F9AD40 /* ContentView_macOS.swift in Sources */,
+				4B5D4F7827855AC900FCAAAD /* View+Extensions.swift in Sources */,
+				4BAD0CB12782D69A007154C8 /* FabulaPlusApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4BAD0CB62782D69A007154C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4BAD0CB72782D69A007154C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		4BAD0CB92782D69A007154C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SM6445X39C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab.FabulaPlus;
+				PRODUCT_NAME = "Fabula+";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4BAD0CBA2782D69A007154C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SM6445X39C;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab.FabulaPlus;
+				PRODUCT_NAME = "Fabula+";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BAD0CBC2782D69A007154C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SM6445X39C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab.FabulaPlus;
+				PRODUCT_NAME = "Fabula+";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4BAD0CBD2782D69A007154C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SM6445X39C;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab.FabulaPlus;
+				PRODUCT_NAME = "Fabula+";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4BAD0C9E2782D697007154C8 /* Build configuration list for PBXProject "FabulaPlus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BAD0CB62782D69A007154C8 /* Debug */,
+				4BAD0CB72782D69A007154C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BAD0CB82782D69A007154C8 /* Build configuration list for PBXNativeTarget "FabulaPlus (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BAD0CB92782D69A007154C8 /* Debug */,
+				4BAD0CBA2782D69A007154C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BAD0CBB2782D69A007154C8 /* Build configuration list for PBXNativeTarget "FabulaPlus (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BAD0CBC2782D69A007154C8 /* Debug */,
+				4BAD0CBD2782D69A007154C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B84E99A2787269900331D23 /* FabulaItemsProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FabulaItemsProvider;
+		};
+		4BAD0CC32782D74E007154C8 /* FabulaItemsProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FabulaItemsProvider;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 4BAD0C9B2782D697007154C8 /* Project object */;
+}
