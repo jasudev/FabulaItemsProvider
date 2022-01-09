@@ -77,11 +77,13 @@ You can share and communicate with developers around the world through the [Fabu
       ```
 3. Build test with Fabula+ app.
 4. Pull Request
-5. Merge & Waiting for review
+5. Merge & Update [Fabula app](https://apps.apple.com/app/id1591155142)
 
-***
 ## Color style
-<img src="Markdown/fabulaColorStyle.png">
+<img src="Markdown/fabulaColorStyle.png">  
+
+## Notice
+Resource data cannot be included for package capacity management.
 
 ## Contact
 instagram : [@dev.fabula](https://www.instagram.com/dev.fabula)  
