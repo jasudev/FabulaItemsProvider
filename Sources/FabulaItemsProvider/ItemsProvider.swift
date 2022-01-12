@@ -42,7 +42,7 @@ public class ItemsProvider {
                      caption: "How to check the current DynamicTypeSize.",
                      creator: "jasu",
                      tags: "DynamicTypeSize",
-                     view: FAnyView(P200_DynamicTypeSize())),
+                     view: FAnyView(P200_DynamicTypeSize()), platformType: .iOS),
             ItemData(id: 199, category: .study,
                      section: "Font",
                      createDate: "2022-01-12",
