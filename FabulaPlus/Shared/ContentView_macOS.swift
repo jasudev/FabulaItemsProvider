@@ -20,6 +20,7 @@ struct ContentView_macOS: View {
                 item.view
             } label: {
                 ItemRowView(itemData: item)
+                    .padding(.bottom, 10)
             }
         }
     }
