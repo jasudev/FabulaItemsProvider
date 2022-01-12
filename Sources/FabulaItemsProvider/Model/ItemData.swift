@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-public enum OSType {
+public enum PlatformType {
     case iOS
-    case mac
+    case macOS
     case both
 }
 
@@ -31,7 +31,7 @@ public struct ItemData: Identifiable {
     public private(set) var creator: String
     public private(set) var tags: String
     public private(set) var view: FAnyView
-    public private(set) var osType: OSType = .both
+    public private(set) var platformType: PlatformType = .both
 
     public var navigationTitle: String {
         return "[\(self.section)]" + " - " + self.title + " - " + self.caption
@@ -49,7 +49,7 @@ public struct ItemData: Identifiable {
         return date!
     }
     
-    public init(id: Int32, category: CategoryType, section: String, createDate: String, title: String, caption: String, creator: String, tags: String, view: FAnyView, osType: OSType = .both) {
+    public init(id: Int32, category: CategoryType, section: String, createDate: String, title: String, caption: String, creator: String, tags: String, view: FAnyView, platformType: PlatformType = .both) {
         self.id = id
         self.category = category
         self.section = section
@@ -59,7 +59,7 @@ public struct ItemData: Identifiable {
         self.creator = creator
         self.tags = tags
         self.view = view
-        self.osType = osType
+        self.platformType = platformType
     }
 }
 
