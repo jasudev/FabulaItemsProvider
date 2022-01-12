@@ -14,7 +14,7 @@ struct ContentView_macOS: View {
     @AppStorage("colorSchemeDark") var colorSchemeDark: Bool = true
     
     var listView: some View {
-        let items = ItemsProvider.shared.items.reversed()
+        let items = ItemsProvider.shared.itemsByPlatform
         return List(items) { item in
             NavigationLink {
                 item.view
