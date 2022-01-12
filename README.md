@@ -62,7 +62,6 @@ You can share and communicate with developers around the world through the [Fabu
           ...
           public var items: [ItemData] {
               [
-                  ...
                   ItemData(id: 1000, category: .study,
                            section: "Section name",
                            createDate: "2022-01-07",
@@ -71,6 +70,7 @@ You can share and communicate with developers around the world through the [Fabu
                            creator: "Your name",
                            tags: "Search tags",
                            view: FAnyView(P1000_Example())),
+                  ...
               ]
           }
       }
