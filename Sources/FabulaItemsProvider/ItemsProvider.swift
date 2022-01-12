@@ -35,6 +35,22 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 200, category: .study,
+                     section: "Font",
+                     createDate: "2022-01-12",
+                     title: "Dynamic Type Size",
+                     caption: "How to check the current DynamicTypeSize.",
+                     creator: "jasu",
+                     tags: "DynamicTypeSize",
+                     view: FAnyView(P200_DynamicTypeSize())),
+            ItemData(id: 199, category: .study,
+                     section: "Font",
+                     createDate: "2022-01-12",
+                     title: "Custom Font Size",
+                     caption: "How to use Dynamic Type Size with a custom font.",
+                     creator: "jasu",
+                     tags: "DynamicTypeSize",
+                     view: FAnyView(P199_CustomFontSize()), platformType: .iOS),
             ItemData(id: 198, category: .study,
                      section: "Shape",
                      createDate: "2021-12-27",
