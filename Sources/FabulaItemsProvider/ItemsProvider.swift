@@ -26,13 +26,6 @@ public class ItemsProvider {
     
     public init() {}
     
-    public func getItemData(itemId: Int32?) -> ItemData {
-        guard let itemId = itemId, itemId <= self.items.count else {
-            return self.items[0]
-        }
-        return self.items[Int((itemId == 0 ? 1 : itemId)) - 1]
-    }
-    
     public var items: [ItemData] {
         [
             ItemData(id: 200, category: .study,
