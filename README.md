@@ -82,8 +82,20 @@ You can share and communicate with developers around the world through the [Fabu
 ## Color style
 <img src="Markdown/fabulaColorStyle.png">  
 
+## Dependencies
+```
+dependencies: [
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.5.0")),
+        .package(url: "https://github.com/SDWebImage/SDWebImage.git", .upToNextMajor(from: "5.12.2")),
+        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .upToNextMajor(from: "2.0.2"))
+    ],
+```
 ## Notice
 Resource data cannot be included for package capacity management.
+
+## Screenshot
+<img src="Markdown/FabulaPlus_iOS.gif">
+<img src="Markdown/FabulaPlus_macOS.gif">
 
 ## Contact
 instagram : [@dev.fabula](https://www.instagram.com/dev.fabula)  
