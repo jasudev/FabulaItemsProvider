@@ -22,7 +22,7 @@ public struct P108_ReverseMask: View {
     public var body: some View {
         ZStack {
             GeometryReader { proxy in
-                Image("cat")
+                Image(systemName: "scribble.variable")
                     .resizable()
                     .scaledToFill()
                     .frame(width: proxy.size.width, height: proxy.size.height)

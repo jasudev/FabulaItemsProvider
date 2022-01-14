@@ -13,7 +13,7 @@ public struct P106_BackgroundMaterial: View {
     public init() {}
     public var body: some View {
         ZStack {
-            Image("cat")
+            Image(systemName: "scribble.variable")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
             if #available(macOS 12.0, *) {
