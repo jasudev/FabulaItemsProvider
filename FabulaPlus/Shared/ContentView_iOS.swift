@@ -17,15 +17,13 @@ struct ContentView_iOS: View {
         let items = ItemsProvider.shared.itemsByPlatform
         return List(items) { item in
             NavigationLink {
-                ZStack {
-                    Color.fabulaBack1
-                    item.view
-                }
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarColor(backgroundColor: Color.clear, titleColor: Color.fabulaPrimary)
-                .onAppear {
-                    vibration()
-                }
+                item.view
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationBarColor(backgroundColor: Color.clear, titleColor: Color.fabulaPrimary)
+                    .onAppear {
+                        vibration()
+                    }
+                    .background(Color.fabulaBack1)
             } label: {
                 ItemRowView(itemData: item)
             }
