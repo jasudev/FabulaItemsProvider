@@ -28,13 +28,21 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 211, category: .study,
+                     section: "View",
+                     createDate: "2022-01-25",
+                     title: "FrameModifier",
+                     caption: "How to get a frame of another view.",
+                     creator: "jasu",
+                     tags: "size, frame, bounds, rect, cgrect, ViewModifier",
+                     view: FAnyView(P211_FrameModifier())),
             ItemData(id: 210, category: .study,
                      section: "View",
                      createDate: "2022-01-24",
                      title: "ZoomModifier",
                      caption: "How to zoom in/out the view.",
                      creator: "jasu",
-                     tags: "zoom, scale, MagnificationGesture",
+                     tags: "zoom, scale, MagnificationGesture, ViewModifier, image",
                      view: FAnyView(P210_ZoomModifier())),
             ItemData(id: 209, category: .study,
                      section: "View",
