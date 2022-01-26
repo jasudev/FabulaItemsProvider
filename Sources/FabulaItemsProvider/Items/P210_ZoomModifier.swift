@@ -23,11 +23,11 @@ fileprivate
 struct ZoomModifier: ViewModifier {
     enum ZoomState {
         case inactive
-        case zooming(scale: CGFloat)
+        case active(scale: CGFloat)
 
         var scale: CGFloat {
             switch self {
-            case .zooming(let scale):
+            case .active(let scale):
                 return scale
             default:
                 return 1.0
@@ -48,7 +48,7 @@ struct ZoomModifier: ViewModifier {
     var pinchGesture: some Gesture {
         MagnificationGesture()
             .updating($zoomState) { value, state, transaction in
-                state = .zooming(scale: value)
+                state = .active(scale: value)
             }.onEnded { value in
                 var newValue = self.currentScale * value
                 if newValue <= minimum { newValue = minimum }

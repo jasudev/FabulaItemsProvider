@@ -28,13 +28,21 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 212, category: .study,
+                     section: "View",
+                     createDate: "2022-01-26",
+                     title: "FrameModifier",
+                     caption: "How to get a size of another view.",
+                     creator: "jasu",
+                     tags: "size, bounds, rect, cgrect, ViewModifier, PreferenceKey",
+                     view: FAnyView(P212_SizeModifier())),
             ItemData(id: 211, category: .study,
                      section: "View",
                      createDate: "2022-01-25",
                      title: "FrameModifier",
                      caption: "How to get a frame of another view.",
                      creator: "jasu",
-                     tags: "size, frame, bounds, rect, cgrect, ViewModifier",
+                     tags: "size, frame, bounds, rect, cgrect, ViewModifier, PreferenceKey",
                      view: FAnyView(P211_FrameModifier())),
             ItemData(id: 210, category: .study,
                      section: "View",

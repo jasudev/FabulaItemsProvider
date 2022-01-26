@@ -40,16 +40,12 @@ struct FrameModifier: ViewModifier {
         content
             .background(
                 GeometryReader { proxy in
-                    self.makeView(proxy)
+                    Color.clear.preference(key: FramePreferenceKey.self, value: proxy.frame(in: .global))
                 }
             )
-    }
-    
-    func makeView(_ proxy: GeometryProxy) -> some View {
-        DispatchQueue.main.async {
-            self.rect = proxy.frame(in: .global)
-        }
-        return Rectangle().fill(Color.clear)
+            .onPreferenceChange(FramePreferenceKey.self) { preference in
+                self.rect = preference
+            }
     }
 }
 
@@ -57,6 +53,15 @@ fileprivate
 extension View {
     func takeFrame(_ rect: Binding<CGRect>) -> some View {
         self.modifier(FrameModifier(rect))
+    }
+}
+
+fileprivate
+struct FramePreferenceKey: PreferenceKey {
+    typealias V = CGRect
+    static var defaultValue: V = .zero
+    static func reduce(value: inout V, nextValue: () -> V) {
+        value = nextValue()
     }
 }
 
