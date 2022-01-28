@@ -16,9 +16,9 @@ let package = Package(
             targets: ["FabulaItemsProvider"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .upToNextMajor(from: "5.5.0")),
-        .package(url: "https://github.com/SDWebImage/SDWebImage.git", .upToNextMajor(from: "5.12.2")),
-        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .upToNextMajor(from: "2.0.2"))
+        .package(url: "https://github.com/Alamofire/Alamofire.git", .branch("master")),
+        .package(url: "https://github.com/SDWebImage/SDWebImage.git", .branch("master")),
+        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
