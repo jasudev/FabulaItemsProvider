@@ -28,10 +28,18 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 213, category: .study,
+                     section: "View",
+                     createDate: "2022-01-29",
+                     title: "Zoomable",
+                     caption: "How to zoom in/out an image or view.",
+                     creator: "jasu",
+                     tags: "zoom, pinch, imageviewer, image, scale, MagnificationGesture",
+                     view: FAnyView(P213_Zoomable())),
             ItemData(id: 212, category: .study,
                      section: "View",
                      createDate: "2022-01-26",
-                     title: "FrameModifier",
+                     title: "SizeModifier",
                      caption: "How to get a size of another view.",
                      creator: "jasu",
                      tags: "size, bounds, rect, cgrect, ViewModifier, PreferenceKey",
