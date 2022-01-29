@@ -28,7 +28,7 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
-            ItemData(id: 213, category: .study,
+            ItemData(id: 213, category: .uiux,
                      section: "View",
                      createDate: "2022-01-29",
                      title: "Zoomable",
