@@ -54,7 +54,6 @@ public struct UnsplashConfigView: View {
             RoundedRectangle(cornerRadius: 6)
                 .fill(Color.fabulaBackWB100.opacity(0.3))
         )
-        .padding()
     }
 }
 

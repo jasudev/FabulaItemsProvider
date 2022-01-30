@@ -27,6 +27,7 @@ public struct P214_UnsplashProvider: View {
                 UnsplashConfigView {
                     fetchPhotos()
                 }
+                .padding()
                 List {
                     Section {
                         RowPhotoView(photo: photo.photo)
