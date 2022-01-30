@@ -133,5 +133,7 @@ struct RowUserView: View {
 struct P215_UnsplashProvider_Previews: PreviewProvider {
     static var previews: some View {
         P215_UnsplashProvider()
+            .background(Color.fabulaBack1)
+            .preferredColorScheme(.dark)
     }
 }
