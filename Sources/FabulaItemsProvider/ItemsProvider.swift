@@ -28,8 +28,16 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 214, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-01-30",
+                     title: "UnsplashProvider",
+                     caption: "How to use the Unsplash API.",
+                     creator: "jasu",
+                     tags: "api, router, alamofire, webimage, SDWebImage",
+                     view: FAnyView(P214_UnsplashProvider())),
             ItemData(id: 213, category: .uiux,
-                     section: "View",
+                     section: "Library",
                      createDate: "2022-01-29",
                      title: "Zoomable",
                      caption: "How to zoom in/out an image or view.",

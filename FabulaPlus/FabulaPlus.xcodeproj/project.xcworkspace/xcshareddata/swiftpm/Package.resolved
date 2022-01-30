@@ -27,6 +27,15 @@
           "revision": "336d3f6d3b53729c1f274bf6b75f4532ada116eb",
           "version": null
         }
+      },
+      {
+        "package": "UnsplashProvider",
+        "repositoryURL": "https://github.com/jasudev/UnsplashProvider.git",
+        "state": {
+          "branch": "main",
+          "revision": "8192398e86cf7fbec0842df11e1669c70ffe02e3",
+          "version": null
+        }
       }
     ]
   },

@@ -18,14 +18,16 @@ public struct P213_Zoomable: View {
     private var content: some View {
         GeometryReader { proxy in
             TabView(selection: $selection) {
-                ZoomableView(size: CGSize(width: proxy.size.width, height: proxy.size.width * (2/3)), min: 1.0, max: 6.0, showsIndicators: true) {
+                ZoomableView(size: CGSize(width: proxy.size.width, height: proxy.size.width), min: 1.0, max: 6.0, showsIndicators: true) {
                     Image(systemName: "snow")
                         .resizable()
                         .scaledToFit()
-                        .background(Color.black)
+                        .frame(width: proxy.size.width, height: proxy.size.width)
+                        .foregroundColor(Color.fabulaBack1)
+                        .background(Color.fabulaFore1)
                         .clipped()
                 }
-                .frame(width: proxy.size.width, height: proxy.size.width * (2/3))
+                .frame(width: proxy.size.width, height: proxy.size.width)
                 .overlay(
                     Rectangle()
                         .fill(Color.clear)
@@ -61,13 +63,9 @@ public struct P213_Zoomable: View {
     public init() {}
     public var body: some View {
 #if os(iOS)
-        NavigationView {
-            content
-                .navigationTitle(Text(selection == 0 ? "ZoomableView" : "ZoomableImageView"))
-                .navigationBarTitleDisplayMode(.inline)
-                .padding()
-        }
-        .navigationViewStyle(.stack)
+        content
+            .navigationTitle(Text(selection == 0 ? "ZoomableView" : "ZoomableImageView"))
+            .padding()
 #else
         ZStack {
             content
