@@ -23,7 +23,7 @@ public struct UnsplashConfigView: View {
             HStack {
                 Text("Unsplash Configuration")
                     .font(.caption)
-                    .foregroundColor(Color.fabulaFore2)
+                    .foregroundColor(Color.fabulaFore1.opacity(0.6))
                 Spacer()
                 Text("[Get access key](https://unsplash.com/oauth/applications)")
                     .font(.caption)
@@ -38,6 +38,7 @@ public struct UnsplashConfigView: View {
                         TextField("", text: $unsplashAccessKey)
                     }
                 }
+                .modifier(ClearButton(text: $unsplashAccessKey))
                 .onChange(of: unsplashAccessKey) { key in
                     UPConfiguration.shared.accessKey = key
                     if !key.isEmpty {
@@ -45,15 +46,37 @@ public struct UnsplashConfigView: View {
                     }
                 }
                 .textFieldStyle(.roundedBorder)
-                .foregroundColor(Color.fabulaFore1.opacity(0.6))
+                .foregroundColor(Color.fabulaFore1.opacity(0.7))
             }
             .font(.callout)
         }
         .padding(11)
         .background(
             RoundedRectangle(cornerRadius: 6)
-                .fill(Color.fabulaBackWB100.opacity(0.3))
+                .fill(Color.fabulaBackWB100.opacity(0.4))
         )
+    }
+}
+
+fileprivate
+struct ClearButton: ViewModifier {
+    @Binding var text: String
+   
+    public func body(content: Content) -> some View {
+        HStack {
+            content
+            if !text.isEmpty {
+                Button(action: {
+                    self.text = ""
+                }) {
+                    Image(systemName: "multiply.circle.fill")
+                        .foregroundColor(Color.fabulaFore2)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .transition(.scale.combined(with: .opacity))
+            }
+        }
+        .animation(.easeOut(duration: 0.3), value: text)
     }
 }
 

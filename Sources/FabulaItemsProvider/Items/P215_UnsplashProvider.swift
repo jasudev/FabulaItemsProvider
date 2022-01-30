@@ -1,5 +1,5 @@
 //
-//  P214_UnsplashProvider.swift
+//  P215_UnsplashProvider.swift
 //  
 //  Package : https://github.com/jasudev/UnsplashProvider.git
 //  Created by jasu on 2022/01/30.
@@ -10,7 +10,7 @@ import SwiftUI
 import UnsplashProvider
 import SDWebImageSwiftUI
 
-public struct P214_UnsplashProvider: View {
+public struct P215_UnsplashProvider: View {
     
     private let provider = UnsplashProvider()
     
@@ -130,8 +130,8 @@ struct RowUserView: View {
     }
 }
 
-struct P214_UnsplashProvider_Previews: PreviewProvider {
+struct P215_UnsplashProvider_Previews: PreviewProvider {
     static var previews: some View {
-        P214_UnsplashProvider()
+        P215_UnsplashProvider()
     }
 }
