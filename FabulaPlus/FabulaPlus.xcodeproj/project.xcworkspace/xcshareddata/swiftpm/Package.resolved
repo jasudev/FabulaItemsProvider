@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "Scroller",
+        "repositoryURL": "https://github.com/jasudev/Scroller.git",
+        "state": {
+          "branch": "main",
+          "revision": "91a1d519b1efc634e64d40be865c17b142baec9c",
+          "version": null
+        }
+      },
+      {
         "package": "SDWebImage",
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {

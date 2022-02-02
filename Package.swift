@@ -19,7 +19,8 @@ let package = Package(
         .package(url: "https://github.com/Alamofire/Alamofire.git", .branch("master")),
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", .branch("master")),
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
-        .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main"))
+        .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
+        .package(url: "https://github.com/jasudev/Scroller.git", .branch("main"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -29,7 +30,8 @@ let package = Package(
             dependencies: ["Alamofire",
                            "SDWebImage",
                            "SDWebImageSwiftUI",
-                           "UnsplashProvider"]),
+                           "UnsplashProvider",
+                           "Scroller"]),
         .testTarget(
             name: "FabulaItemsProviderTests",
             dependencies: ["FabulaItemsProvider"]),
