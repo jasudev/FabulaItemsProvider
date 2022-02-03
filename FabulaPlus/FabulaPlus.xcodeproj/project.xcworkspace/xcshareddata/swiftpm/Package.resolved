@@ -5,9 +5,9 @@
         "package": "Alamofire",
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
-          "branch": "master",
-          "revision": "6de3f6579bc04e0a769aa39993663e5a131d1c41",
-          "version": null
+          "branch": null,
+          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
+          "version": "5.4.4"
         }
       },
       {
@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/jasudev/UnsplashProvider.git",
         "state": {
           "branch": "main",
-          "revision": "8192398e86cf7fbec0842df11e1669c70ffe02e3",
+          "revision": "94ec1a42eea5f7881407b75f4658dd1f879229c6",
           "version": null
         }
       }
