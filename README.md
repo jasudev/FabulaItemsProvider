@@ -86,7 +86,6 @@ You can share and communicate with developers around the world through the [Fabu
 ```
 dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", .branch("master")),
-        .package(url: "https://github.com/SDWebImage/SDWebImage.git", .branch("master")),
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
         .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
         .package(url: "https://github.com/jasudev/Scroller.git", .branch("main"))
