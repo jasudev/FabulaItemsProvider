@@ -75,7 +75,7 @@ You can share and communicate with developers around the world through the [Fabu
           }
       }
       ```
-3. Build test with Fabula+ app.
+3. Build test with FabulaPlus app.
 4. Pull Request
 5. Merge & Update [Fabula app](https://apps.apple.com/app/id1591155142)
 
@@ -85,7 +85,7 @@ You can share and communicate with developers around the world through the [Fabu
 ## Dependencies
 ```
 dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .branch("master")),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.4"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
         .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
         .package(url: "https://github.com/jasudev/Scroller.git", .branch("main"))

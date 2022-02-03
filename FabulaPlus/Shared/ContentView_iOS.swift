@@ -48,7 +48,7 @@ struct ContentView_iOS: View {
                 }
                 .navigationBarColor(backgroundColor: Color.fabulaBar1, titleColor: Color.fabulaPrimary)
                 .edgesIgnoringSafeArea(.bottom)
-                .navigationTitle("Fabula+")
+                .navigationTitle("FabulaPlus")
             
             HomeView()
                 .edgesIgnoringSafeArea(.top)

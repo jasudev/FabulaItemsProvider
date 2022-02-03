@@ -16,7 +16,7 @@ let package = Package(
             targets: ["FabulaItemsProvider"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", .branch("master")),
+        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.4"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
         .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
         .package(url: "https://github.com/jasudev/Scroller.git", .branch("main"))

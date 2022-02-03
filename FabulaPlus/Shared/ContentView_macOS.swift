@@ -42,7 +42,7 @@ struct ContentView_macOS: View {
                     }
                 }
                 .frame(minWidth: 360)
-                .navigationTitle("Fabula+")
+                .navigationTitle("FabulaPlus")
             
             HomeView()
         }
