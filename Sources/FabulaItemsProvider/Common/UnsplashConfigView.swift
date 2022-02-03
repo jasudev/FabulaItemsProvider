@@ -33,9 +33,9 @@ public struct UnsplashConfigView: View {
                     .foregroundColor(Color.fabulaFore1)
                 ZStack {
                     if #available(macOS 12.0, *) {
-                        TextField("", text: $unsplashAccessKey, prompt: Text("<YOUR_ACCESS_KEY>"))
+                        SecureField("", text: $unsplashAccessKey, prompt: Text("<YOUR_ACCESS_KEY>"))
                     } else {
-                        TextField("", text: $unsplashAccessKey)
+                        SecureField("", text: $unsplashAccessKey)
                     }
                 }
                 .modifier(ClearButton(text: $unsplashAccessKey))
