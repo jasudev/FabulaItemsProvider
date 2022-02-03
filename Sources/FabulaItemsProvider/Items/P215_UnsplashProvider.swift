@@ -104,6 +104,7 @@ struct RowPhotoView: View {
                     .scaledToFit()
                     .listRowInsets(EdgeInsets())
                     .clipShape(Rectangle())
+                CaptionView(user: photo.user)
             }
             .listRowInsets(EdgeInsets())
         }else {
@@ -119,13 +120,65 @@ struct RowUserView: View {
     
     var body: some View {
         if let user = user {
-            WebImage(url: user.profileUrls.large)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .listRowInsets(EdgeInsets())
-                .clipShape(Rectangle())
+            ZStack {
+                WebImage(url: user.profileUrls.large)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .listRowInsets(EdgeInsets())
+                    .clipShape(Rectangle())
+                CaptionView(user: user)
+            }
         }else {
             EmptyView()
+        }
+    }
+}
+
+fileprivate
+struct CaptionView: View {
+    
+    @Environment(\.openURL) var openURL
+    let user: UPUser?
+    
+    var body: some View {
+        VStack {
+            Spacer()
+            HStack {
+                Spacer()
+                if let user = user {
+                    HStack(spacing: 0) {
+                        Text("Photo by ")
+                        Button {
+                            openURL(user.linkUrls.html)
+                        } label: {
+                            Text("\(user.name ?? "")")
+                                .underline()
+                        }
+                        Text(" on ")
+                        Button {
+                            if let url = URL(string: "https://unsplash.com") {
+                                openURL(url)
+                            }
+                        } label: {
+                            Text("Unsplash")
+                                .underline()
+                        }
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    .font(.caption)
+                    .foregroundColor(Color.white.opacity(0.6))
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 10)
+                    .background(Color.black.opacity(0.8))
+                    .padding(.bottom, 10)
+#if os(macOS)
+                    .padding(.trailing, 16)
+#endif
+                    .clipped()
+                }else {
+                    EmptyView()
+                }
+            }
         }
     }
 }
