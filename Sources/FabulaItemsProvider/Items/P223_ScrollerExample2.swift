@@ -1,8 +1,8 @@
 //
-//  P222_ScrollerExample.swift
+//  P223_ScrollerExample2.swift
 //  
 //  Package : https://github.com/jasudev/Scroller.git
-//  Created by jasu on 2022/02/03.
+//  Created by jasu on 2022/02/04.
 //  Copyright (c) 2022 jasu All rights reserved.
 //
 
@@ -11,10 +11,10 @@ import UnsplashProvider
 import SDWebImageSwiftUI
 import Scroller
 
-public struct P222_ScrollerExample: View {
+public struct P223_ScrollerExample2: View {
     
     private let provider = UnsplashProvider()
-    private let query: String = "cat"
+    private let query: String = "Travel"
     @StateObject var searchPhotos = UPSearchPhotosStore()
     @State private var scrollValue: CGFloat = 0
     
@@ -25,10 +25,10 @@ public struct P222_ScrollerExample: View {
                 fetchPhotos()
             }
             .padding()
-            Scroller(.vertical, showsIndicators: true, value: $scrollValue) {
+            Scroller(.horizontal, showsIndicators: true, value: $scrollValue) {
                 ForEach(searchPhotos.photos) { photo in
                     GeometryReader { proxy in
-                        RowPhotoView(photo: photo, value: proxy.scrollerValue(.vertical))
+                        RowPhotoView(photo: photo, value: proxy.scrollerValue(.horizontal))
                     }
                 }
             } lastContent: {
@@ -42,7 +42,7 @@ public struct P222_ScrollerExample: View {
     }
     
     private func fetchPhotos() {
-        searchPhotos.fetchSearchPhotos(query: query, perPage: 30, orientation: .landscape)
+        searchPhotos.fetchSearchPhotos(query: query, perPage: 10)
     }
 }
 
@@ -66,12 +66,13 @@ struct RowPhotoView: ScrollerContent {
                         .transition(.fade(duration: 0.5))
                         .scaledToFill()
                         .frame(width: proxy.size.width, height: proxy.size.height)
+                        .clipped()
                     CaptionView(user: photo.user)
-                        .offset(y: (proxy.size.height * 0.7) * -value)
                 }
                 .listRowInsets(EdgeInsets())
                 .opacity(1.0 - value)
-                .offset(y: (proxy.size.height * 0.7) * value)
+                .scaleEffect(1 - value)
+                .offset(x: (proxy.size.width * 0.5) * value)
             }
         }else {
             EmptyView()
@@ -128,8 +129,8 @@ struct CaptionView: View {
     }
 }
 
-struct P222_ScrollerExample_Previews: PreviewProvider {
+struct P223_ScrollerExample2_Previews: PreviewProvider {
     static var previews: some View {
-        P222_ScrollerExample()
+        P223_ScrollerExample2()
     }
 }
