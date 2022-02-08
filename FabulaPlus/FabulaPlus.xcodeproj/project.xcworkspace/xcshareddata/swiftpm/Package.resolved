@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "AnimateText",
+        "repositoryURL": "https://github.com/jasudev/AnimateText.git",
+        "state": {
+          "branch": "main",
+          "revision": "c0bfdb4ed4fd3368bbe0dffd557747ab90b3edcc",
+          "version": null
+        }
+      },
+      {
         "package": "Scroller",
         "repositoryURL": "https://github.com/jasudev/Scroller.git",
         "state": {

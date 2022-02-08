@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 224, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-02-09",
+                     title: "AnimateText",
+                     caption: "How to use the AnimateText library.",
+                     creator: "jasu",
+                     tags: "animation, animations, typo",
+                     view: FAnyView(P224_AnimateText())),
             ItemData(id: 223, category: .uiux,
                      section: "Library",
                      createDate: "2022-02-04",
