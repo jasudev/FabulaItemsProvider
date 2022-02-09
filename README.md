@@ -11,6 +11,10 @@ You can share and communicate with developers around the world through the [Fabu
 [![MIT](https://img.shields.io/badge/licenses-MIT-red.svg)](https://opensource.org/licenses/MIT)  
 [<img src="Markdown/fabula.png">](https://apps.apple.com/app/id1591155142)  
 
+## Screenshot
+<img src="Markdown/FabulaPlus_iOS.gif">
+<img src="Markdown/FabulaPlus_macOS.gif">
+
 ## Structure
 <img src="Markdown/fabulaStructure.png">
 
@@ -88,15 +92,12 @@ dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.4"),
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
         .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
-        .package(url: "https://github.com/jasudev/Scroller.git", .branch("main"))
+        .package(url: "https://github.com/jasudev/Scroller.git", .branch("main")),
+        .package(url: "https://github.com/jasudev/AnimateText.git", .branch("main"))
     ]
 ```
 ## Notice
 Resource data cannot be included for package capacity management.
-
-## Screenshot
-<img src="Markdown/FabulaPlus_iOS.gif">
-<img src="Markdown/FabulaPlus_macOS.gif">
 
 ## Contact
 instagram : [@dev.fabula](https://www.instagram.com/dev.fabula)  
