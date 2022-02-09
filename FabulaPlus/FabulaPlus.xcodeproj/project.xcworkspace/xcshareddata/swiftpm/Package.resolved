@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/jasudev/AnimateText.git",
         "state": {
           "branch": "main",
-          "revision": "c0bfdb4ed4fd3368bbe0dffd557747ab90b3edcc",
+          "revision": "c55847e03bb3f36cf83cc217fe60ec5feda9ddd6",
           "version": null
         }
       },
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/jasudev/Scroller.git",
         "state": {
           "branch": "main",
-          "revision": "cbde0d440de7233e3261dfa4d78f4abe62a05f13",
+          "revision": "af097aec130f93f41dc85dbae27c055730d0022a",
           "version": null
         }
       },
@@ -51,7 +51,7 @@
         "repositoryURL": "https://github.com/jasudev/UnsplashProvider.git",
         "state": {
           "branch": "main",
-          "revision": "94ec1a42eea5f7881407b75f4658dd1f879229c6",
+          "revision": "352d07a18bb1038f6551429e5f8780b48ecff149",
           "version": null
         }
       }
