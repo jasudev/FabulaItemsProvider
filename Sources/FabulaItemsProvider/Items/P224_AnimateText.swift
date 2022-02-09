@@ -86,7 +86,6 @@ struct P224_AnimateText: View {
                     .frame(height: 260)
             }
         }
-        .navigationTitle(Text("AnimateText"))
 #endif
     }
     
