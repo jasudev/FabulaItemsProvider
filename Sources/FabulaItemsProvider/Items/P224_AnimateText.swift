@@ -117,9 +117,14 @@ struct CustomEffect: ATTextAnimateEffect {
             content
                 .foregroundColor(color)
                 .opacity(data.invValue)
+                .overlay(
+                    Rectangle().fill(Color.clear)
+                        .border(Color.accentColor.opacity(0.5), width: 1)
+                )
         }
         .animation(.spring(response: 1.2, dampingFraction: 0.6, blendDuration: 0.9).delay(Double(data.index) * 0.10), value: data.value)
         .scaleEffect(data.scale, anchor: .bottom)
+        .rotationEffect(Angle(degrees: -360 * data.invValue))
         .animation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0.9).delay(Double(data.index) * 0.10), value: data.value)
     }
 }
