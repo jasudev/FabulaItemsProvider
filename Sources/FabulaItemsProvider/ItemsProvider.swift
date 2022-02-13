@@ -28,6 +28,22 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 226, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-02-13",
+                     title: "LottieUI+Scroller",
+                     caption: "How to use the LottieUI/Scroller library.",
+                     creator: "jasu",
+                     tags: "animation, animations, lottie, scroller",
+                     view: FAnyView(P226_LottieUIScroller())),
+            ItemData(id: 225, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-02-13",
+                     title: "LottieUI",
+                     caption: "How to use the LottieUI library.",
+                     creator: "jasu",
+                     tags: "animation, animations, lottie",
+                     view: FAnyView(P225_LottieUI())),
             ItemData(id: 224, category: .uiux,
                      section: "Library",
                      createDate: "2022-02-09",

@@ -20,7 +20,8 @@ let package = Package(
         .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
         .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
         .package(url: "https://github.com/jasudev/Scroller.git", .branch("main")),
-        .package(url: "https://github.com/jasudev/AnimateText.git", .branch("main"))
+        .package(url: "https://github.com/jasudev/AnimateText.git", .branch("main")),
+        .package(url: "https://github.com/jasudev/LottieUI.git", .branch("main"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -31,7 +32,8 @@ let package = Package(
                            "SDWebImageSwiftUI",
                            "UnsplashProvider",
                            "Scroller",
-                           "AnimateText"]),
+                           "AnimateText",
+                           "LottieUI"]),
         .testTarget(
             name: "FabulaItemsProviderTests",
             dependencies: ["FabulaItemsProvider"]),

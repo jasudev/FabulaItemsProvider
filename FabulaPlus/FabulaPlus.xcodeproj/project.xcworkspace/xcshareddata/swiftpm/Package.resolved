@@ -15,7 +15,25 @@
         "repositoryURL": "https://github.com/jasudev/AnimateText.git",
         "state": {
           "branch": "main",
-          "revision": "c55847e03bb3f36cf83cc217fe60ec5feda9ddd6",
+          "revision": "2bd78dca1a3bcc82f7004a58d64b4f34dcbf22b5",
+          "version": null
+        }
+      },
+      {
+        "package": "Lottie",
+        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
+        "state": {
+          "branch": "master",
+          "revision": "0ba8b64d572b37966309bf5705afe8e6aa76b7e0",
+          "version": null
+        }
+      },
+      {
+        "package": "LottieUI",
+        "repositoryURL": "https://github.com/jasudev/LottieUI.git",
+        "state": {
+          "branch": "main",
+          "revision": "e45088d28a769bff3acf4e649c1c9e32c7edf081",
           "version": null
         }
       },
@@ -24,7 +42,7 @@
         "repositoryURL": "https://github.com/jasudev/Scroller.git",
         "state": {
           "branch": "main",
-          "revision": "af097aec130f93f41dc85dbae27c055730d0022a",
+          "revision": "61dbc21640964286759e2799670d3dc5c50f610b",
           "version": null
         }
       },
@@ -51,7 +69,7 @@
         "repositoryURL": "https://github.com/jasudev/UnsplashProvider.git",
         "state": {
           "branch": "main",
-          "revision": "352d07a18bb1038f6551429e5f8780b48ecff149",
+          "revision": "4c2ff4524f4f8a855a6329f289434b123c2d1b96",
           "version": null
         }
       }
