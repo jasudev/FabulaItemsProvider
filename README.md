@@ -86,16 +86,15 @@ You can share and communicate with developers around the world through the [Fabu
 ## Color style
 <img src="Markdown/fabulaColorStyle.png">  
 
-## Dependencies
-```
+## Swift Package Manager
+The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. Once you have your Swift package set up, adding FabulaItemsProvider as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+
+```swift
 dependencies: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.4"),
-        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
-        .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
-        .package(url: "https://github.com/jasudev/Scroller.git", .branch("main")),
-        .package(url: "https://github.com/jasudev/AnimateText.git", .branch("main"))
-    ]
+    .package(url: "https://github.com/jasudev/FabulaItemsProvider.git", .branch("main"))
+]
 ```
+
 ## Notice
 Resource data cannot be included for package capacity management.
 
