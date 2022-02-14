@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 227, category: .play,
+                     section: "Library",
+                     createDate: "2022-02-13",
+                     title: "Bubble",
+                     caption: "How to express bubbles using LottieUI library.",
+                     creator: "jasu",
+                     tags: "animation, animations, lottie",
+                     view: FAnyView(P227_Bubble())),
             ItemData(id: 226, category: .uiux,
                      section: "Library",
                      createDate: "2022-02-13",

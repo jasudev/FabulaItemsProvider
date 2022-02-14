@@ -9,7 +9,7 @@
 import SwiftUI
 import AnimateText
 
-struct P224_AnimateText: View {
+public struct P224_AnimateText: View {
     
     @State private var unitType: ATUnitType = .letters
     
@@ -49,7 +49,8 @@ struct P224_AnimateText: View {
         }
     }
     
-    var body: some View {
+    public init() {}
+    public var body: some View {
 #if os(iOS)
         NavigationView {
             VStack {
