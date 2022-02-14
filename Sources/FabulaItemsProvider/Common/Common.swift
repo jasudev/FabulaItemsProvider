@@ -22,11 +22,9 @@ public var isPad: Bool {
 
 #if os(iOS)
 public func vibration(_ style: UIImpactFeedbackGenerator.FeedbackStyle = .soft) {
-    #if os(iOS)
     let feedback = UIImpactFeedbackGenerator(style: style)
     feedback.prepare()
     feedback.impactOccurred()
-    #endif
 }
 #else
 public func vibration() {}
