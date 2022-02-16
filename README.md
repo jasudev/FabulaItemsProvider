@@ -1,4 +1,4 @@
-# **FabulaItemsProvider**
+# **FabulaItemsProvider for SwiftUI**
 This is the source package for the Fabula project.  
 You can share and communicate with developers around the world through the [Fabula app](https://apps.apple.com/app/id1591155142).  
 
