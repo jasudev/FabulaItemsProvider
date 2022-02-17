@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 228, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-02-17",
+                     title: "AxisSheet",
+                     caption: "How to use the AxisSheet library.",
+                     creator: "jasu",
+                     tags: "BottomSheet, presentation",
+                     view: FAnyView(P228_AxisSheet())),
             ItemData(id: 227, category: .play,
                      section: "Library",
                      createDate: "2022-02-13",
