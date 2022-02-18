@@ -403,7 +403,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLabPlus;
 				PRODUCT_NAME = FabulaPlus;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -433,7 +433,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLabPlus;
 				PRODUCT_NAME = FabulaPlus;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -465,7 +465,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLabPlus;
 				PRODUCT_NAME = FabulaPlus;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -495,7 +495,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLab;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devstore.FabulaLabPlus;
 				PRODUCT_NAME = FabulaPlus;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
