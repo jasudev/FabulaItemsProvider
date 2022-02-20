@@ -22,7 +22,8 @@ let package = Package(
         .package(url: "https://github.com/jasudev/Scroller.git", .branch("main")),
         .package(url: "https://github.com/jasudev/AnimateText.git", .branch("main")),
         .package(url: "https://github.com/jasudev/LottieUI.git", .branch("main")),
-        .package(url: "https://github.com/jasudev/AxisSheet.git", .branch("main"))
+        .package(url: "https://github.com/jasudev/AxisSheet.git", .branch("main")),
+        .package(url: "https://github.com/jasudev/AxisRatingBar.git", .branch("main"))
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -35,7 +36,8 @@ let package = Package(
                            "Scroller",
                            "AnimateText",
                            "LottieUI",
-                           "AxisSheet"]),
+                           "AxisSheet",
+                           "AxisRatingBar"]),
         .testTarget(
             name: "FabulaItemsProviderTests",
             dependencies: ["FabulaItemsProvider"]),

@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 230, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-02-20",
+                     title: "AxisRatingBar",
+                     caption: "How to use the AxisRatingBar library.",
+                     creator: "jasu",
+                     tags: "rating",
+                     view: FAnyView(P230_AxisRatingBar())),
             ItemData(id: 229, category: .uiux,
                      section: "Shape",
                      createDate: "2022-02-19",

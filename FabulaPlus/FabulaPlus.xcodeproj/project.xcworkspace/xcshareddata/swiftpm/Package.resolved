@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "AxisRatingBar",
+        "repositoryURL": "https://github.com/jasudev/AxisRatingBar.git",
+        "state": {
+          "branch": "main",
+          "revision": "e4468c33376085ddd40f27b1c36b48b77bd626cc",
+          "version": null
+        }
+      },
+      {
         "package": "AxisSheet",
         "repositoryURL": "https://github.com/jasudev/AxisSheet.git",
         "state": {
