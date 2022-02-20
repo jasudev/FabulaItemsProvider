@@ -28,7 +28,6 @@ public struct P230_AxisRatingBar: View {
                     Image(systemName: "square.split.1x2.fill")
                     Text("Vertical")
                 }
-                
         }
 #if os(macOS)
         .padding()
@@ -80,7 +79,7 @@ struct CustomRatingBar: View {
                                    valueMode: .ratio)
         return Group {
             Group {
-                VStack {
+                VStack(spacing: 6) {
                     Text("\(value1, specifier: "%.2f")")
                     AxisRatingBar(value: $value1, constant: constant1) {
                         ARStar(count: round(starCount), innerRatio: innerRatio)
@@ -94,7 +93,7 @@ struct CustomRatingBar: View {
             }
             Group {
                 Divider().padding(axisMode == .vertical ? 10 : 0)
-                VStack {
+                VStack(spacing: 6) {
                     Text("\(value2, specifier: "%.2f")")
                     AxisRatingBar(value: $value2, constant: constant2) {
                         ARStar(count: round(starCount), innerRatio: innerRatio)
@@ -107,7 +106,7 @@ struct CustomRatingBar: View {
             }
             Group {
                 Divider().padding(axisMode == .vertical ? 10 : 0)
-                VStack {
+                VStack(spacing: 6) {
                     Text("\(value3, specifier: "%.2f")")
                     AxisRatingBar(value: $value3, constant: constant3) {
                         Capsule()
@@ -121,7 +120,7 @@ struct CustomRatingBar: View {
             }
             Group {
                 Divider().padding(axisMode == .vertical ? 10 : 0)
-                VStack {
+                VStack(spacing: 6) {
                     Text("\(value4, specifier: "%.2f")")
                     AxisRatingBar(value: $value4, constant: constant4) {
                         Image(systemName: "heart.fill")
@@ -137,48 +136,53 @@ struct CustomRatingBar: View {
         }
     }
     var body: some View {
-        VStack {
-            Spacer()
-            Spacer()
-            if axisMode == .horizontal {
-                VStack(alignment: .center) {
-                    content
-                        .padding(.bottom)
+        ScrollView {
+            VStack {
+                Spacer()
+                Group {
+                    HStack {
+                        Text("StarCount : ")
+                        Slider(value: $starCount, in: 1...10)
+                        Text("\(starCount, specifier: "%.2f")")
+                    }
+                    HStack {
+                        Text("InnerRatio : ")
+                        Slider(value: $innerRatio, in: 0...2)
+                        Text("\(innerRatio, specifier: "%.2f")")
+                    }
+                    Divider()
+                    HStack {
+                        Text("Spacing : ")
+                        Slider(value: $spacing, in: 0...20)
+                        Text("\(spacing, specifier: "%.2f")")
+                    }
+                    Picker("", selection: $fillMode) {
+                        Text("Full").tag(ARFillMode.full)
+                        Text("Half").tag(ARFillMode.half)
+                        Text("Precise").tag(ARFillMode.precise)
+                    }
+                    .pickerStyle(.segmented)
                 }
-            }else {
-                HStack(alignment: .bottom) {
-                    content
-                        .padding(.bottom)
+                Divider()
+                Spacer()
+                Spacer()
+                if axisMode == .horizontal {
+                    VStack(alignment: .center) {
+                        content
+                            .padding(.bottom)
+                    }
+                }else {
+                    HStack(alignment: .bottom) {
+                        content
+                            .padding(.bottom)
+                    }
                 }
+                Spacer()
             }
-            Spacer()
-            Divider()
-            HStack {
-                Text("StarCount : ")
-                Slider(value: $starCount, in: 1...10)
-                Text("\(starCount, specifier: "%.2f")")
-            }
-            HStack {
-                Text("InnerRatio : ")
-                Slider(value: $innerRatio, in: 0...2)
-                Text("\(innerRatio, specifier: "%.2f")")
-            }
-            Divider()
-            Picker("", selection: $fillMode) {
-                Text("Full").tag(ARFillMode.full)
-                Text("Half").tag(ARFillMode.half)
-                Text("Precise").tag(ARFillMode.precise)
-            }
-            .pickerStyle(.segmented)
-            HStack {
-                Text("Spacing : ")
-                Slider(value: $spacing, in: 0...20)
-                Text("\(spacing, specifier: "%.2f")")
-            }
+            .padding()
+            .animation(.easeInOut, value: starCount)
+            .animation(.easeInOut, value: innerRatio)
         }
-        .padding()
-        .animation(.easeInOut, value: starCount)
-        .animation(.easeInOut, value: innerRatio)
     }
 }
 
