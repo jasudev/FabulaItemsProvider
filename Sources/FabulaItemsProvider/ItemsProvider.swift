@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 229, category: .uiux,
+                     section: "Shape",
+                     createDate: "2022-02-19",
+                     title: "Star",
+                     caption: "How to make a star shape.",
+                     creator: "jasu",
+                     tags: "AnimatablePair",
+                     view: FAnyView(P229_StarShape())),
             ItemData(id: 228, category: .uiux,
                      section: "Library",
                      createDate: "2022-02-17",

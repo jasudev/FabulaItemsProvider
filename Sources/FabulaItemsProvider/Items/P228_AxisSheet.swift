@@ -76,7 +76,7 @@ public struct P228_AxisSheet: View {
     }
     
     private func getHeaderAngle() -> Angle {
-        switch constants.axisType {
+        switch constants.axisMode {
         case .top, .bottom: return Angle(degrees: 0)
         case .leading: return Angle(degrees: 90)
         case .trailing: return Angle(degrees: -90)
@@ -84,10 +84,10 @@ public struct P228_AxisSheet: View {
     }
     
     private func getOffset() -> CGSize {
-        guard constants.presentationType == .minimize else {
+        guard constants.presentationMode == .minimize else {
             return .zero
         }
-        switch constants.axisType {
+        switch constants.axisMode {
         case .top:       return CGSize(width: 0, height: constants.header.size)
         case .bottom:    return CGSize(width: 0, height: -constants.header.size)
         case .leading:   return CGSize(width: constants.header.size, height: 0)
@@ -169,15 +169,15 @@ struct SheetControls: View {
                 .toggleStyle(SwitchToggleStyle(tint: .accentColor))
                 .labelsHidden()
             VStack(alignment: .trailing) {
-                Picker("", selection: $constants.axisType) {
-                    Image(systemName: "rectangle.bottomthird.inset.filled").tag(ASAxisType.bottom)
-                    Image(systemName: "rectangle.rightthird.inset.filled").tag(ASAxisType.trailing)
-                    Image(systemName: "rectangle.leadingthird.inset.filled").tag(ASAxisType.leading)
-                    Image(systemName: "rectangle.topthird.inset.filled").tag(ASAxisType.top)
+                Picker("", selection: $constants.axisMode) {
+                    Image(systemName: "rectangle.bottomthird.inset.filled").tag(ASAxisMode.bottom)
+                    Image(systemName: "rectangle.rightthird.inset.filled").tag(ASAxisMode.trailing)
+                    Image(systemName: "rectangle.leadingthird.inset.filled").tag(ASAxisMode.leading)
+                    Image(systemName: "rectangle.topthird.inset.filled").tag(ASAxisMode.top)
                 }
-                Picker("", selection: $constants.presentationType) {
-                    Text("Minimize").tag(ASPresentationType.minimize)
-                    Text("Hide").tag(ASPresentationType.hide)
+                Picker("", selection: $constants.presentationMode) {
+                    Text("Minimize").tag(ASPresentationMode.minimize)
+                    Text("Hide").tag(ASPresentationMode.hide)
                 }
                 Picker("", selection: $isCustomHeader) {
                     Text("Normal").tag(false)
