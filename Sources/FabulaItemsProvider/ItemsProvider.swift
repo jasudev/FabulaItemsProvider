@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 231, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-02-23",
+                     title: "AxisContribution",
+                     caption: "How to use the AxisContribution library.",
+                     creator: "jasu",
+                     tags: "github, contributions, calendar",
+                     view: FAnyView(P231_AxisContribution())),
             ItemData(id: 230, category: .uiux,
                      section: "Library",
                      createDate: "2022-02-20",
