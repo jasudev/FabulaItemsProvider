@@ -42,7 +42,7 @@ public struct P231_AxisContribution: View {
                     .fill(Color.fabulaFore1.opacity(0.6))
                     .opacity(0.5)
             )
-            .frame(maxWidth: 600, maxHeight: 600)
+            .frame(maxWidth: 833, maxHeight: 833)
             
             Spacer()
             Picker("", selection: $rowImageName) {
