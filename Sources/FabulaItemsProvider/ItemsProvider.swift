@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 232, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-03-01",
+                     title: "AxisTooltip",
+                     caption: "How to use the AxisTooltip library.",
+                     creator: "jasu",
+                     tags: "github, tooltip",
+                     view: FAnyView(P232_AxisTooltip())),
             ItemData(id: 231, category: .uiux,
                      section: "Library",
                      createDate: "2022-02-23",

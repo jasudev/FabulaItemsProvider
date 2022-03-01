@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/jasudev/AxisContribution.git",
         "state": {
           "branch": "main",
-          "revision": "69245b29df85ce674e83078de8a157c8dd1f3d3d",
+          "revision": "dd794264fe7f4c265e05bc0867370ed587e27279",
           "version": null
         }
       },
@@ -43,6 +43,15 @@
         "state": {
           "branch": "main",
           "revision": "251961e7d7d240538d77d3fbf5045dd7ade0b641",
+          "version": null
+        }
+      },
+      {
+        "package": "AxisTooltip",
+        "repositoryURL": "https://github.com/jasudev/AxisTooltip.git",
+        "state": {
+          "branch": "main",
+          "revision": "adb25edec8dadc92925dbe2d6df29a16e279f299",
           "version": null
         }
       },
