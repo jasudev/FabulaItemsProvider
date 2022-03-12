@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 233, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-03-13",
+                     title: "AxisTabView",
+                     caption: "How to use the AxisTabView library.",
+                     creator: "jasu",
+                     tags: "github, tabview",
+                     view: FAnyView(P233_AxisTabView())),
             ItemData(id: 232, category: .uiux,
                      section: "Library",
                      createDate: "2022-03-01",

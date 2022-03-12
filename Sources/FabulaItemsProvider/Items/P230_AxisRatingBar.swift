@@ -1,7 +1,7 @@
 //
 //  P230_AxisRatingBar.swift
 //  
-//
+//  Package : https://github.com/jasudev/AxisRatingBar.git
 //  Created by jasu on 2022/02/20.
 //  Copyright (c) 2022 jasu All rights reserved.
 //

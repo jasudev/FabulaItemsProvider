@@ -47,6 +47,15 @@
         }
       },
       {
+        "package": "AxisTabView",
+        "repositoryURL": "https://github.com/jasudev/AxisTabView.git",
+        "state": {
+          "branch": "main",
+          "revision": "1ff84bd19e5351f0761b9d5f07d4ba98d0117088",
+          "version": null
+        }
+      },
+      {
         "package": "AxisTooltip",
         "repositoryURL": "https://github.com/jasudev/AxisTooltip.git",
         "state": {

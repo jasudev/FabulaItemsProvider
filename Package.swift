@@ -26,6 +26,7 @@ let package = Package(
         .package(url: "https://github.com/jasudev/AxisRatingBar.git", .branch("main")),
         .package(url: "https://github.com/jasudev/AxisContribution.git", .branch("main")),
         .package(url: "https://github.com/jasudev/AxisTooltip.git", .branch("main")),
+        .package(url: "https://github.com/jasudev/AxisTabView.git", .branch("main")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -41,7 +42,8 @@ let package = Package(
                            "AxisSheet",
                            "AxisRatingBar",
                            "AxisContribution",
-                           "AxisTooltip"]),
+                           "AxisTooltip",
+                           "AxisTabView"]),
         .testTarget(
             name: "FabulaItemsProviderTests",
             dependencies: ["FabulaItemsProvider"]),
