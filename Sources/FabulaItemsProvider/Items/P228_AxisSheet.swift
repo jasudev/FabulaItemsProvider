@@ -103,9 +103,9 @@ struct SheetConstants: View {
     
     init(constants: Binding<ASConstant>) {
         _constants = constants
-#if os(iOS)
-        UITableView.appearance().backgroundColor = .clear
-#endif
+//#if os(iOS)
+//        UITableView.appearance().backgroundColor = .clear
+//#endif
     }
     
     var content: some View {

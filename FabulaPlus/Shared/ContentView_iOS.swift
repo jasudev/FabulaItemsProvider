@@ -33,7 +33,7 @@ struct ContentView_iOS: View {
     }
     
     init() {
-        UITableView.appearance().backgroundColor = .clear
+//        UITableView.appearance().backgroundColor = .clear
     }
     
     var body: some View {
