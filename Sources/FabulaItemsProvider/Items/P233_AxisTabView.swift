@@ -9,7 +9,7 @@
 import SwiftUI
 import AxisTabView
 
-struct P233_AxisTabView: View {
+public struct P233_AxisTabView: View {
     
     var content: some View {
         List {
@@ -40,8 +40,8 @@ struct P233_AxisTabView: View {
         .navigationBarTitleDisplayMode(.inline)
 #endif
     }
-    init() {}
-    var body: some View {
+    public init() {}
+    public var body: some View {
         #if os(iOS)
         content
         #else
