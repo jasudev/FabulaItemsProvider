@@ -610,12 +610,12 @@ fileprivate
 struct BeadPreview: View {
     
     @State private var selection: Int = 0
-    @State private var constant = ATConstant(axisMode: .bottom, screen: .init(activeSafeArea: true), tab: .init())
+    @State private var constant = ATConstant(axisMode: .bottom, screen: .init(activeSafeArea: false), tab: .init(normalSize: CGSize(width: 50, height: 80)))
     @State private var cornerRadius: CGFloat = 26
     @State private var radius: CGFloat = 30
     @State private var depth: CGFloat = 0.8
     @State private var color: Color = .white
-    @State private var marbleColor: Color = .white
+    @State private var marbleColor: Color = .accentColor
     
     var body: some View {
         GeometryReader { proxy in
