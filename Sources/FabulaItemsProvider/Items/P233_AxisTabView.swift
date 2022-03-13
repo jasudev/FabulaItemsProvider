@@ -14,9 +14,9 @@ public struct P233_AxisTabView: View {
     var content: some View {
         List {
             Section {
-                NavigationLink("BasicStyle") { BasicPreview()}
-                NavigationLink("CapsuleStyle") { CapsulePreview()}
-                NavigationLink("MaterialStyle") { MaterialPreview()}
+                NavigationLink("Basic") { BasicPreview()}
+                NavigationLink("Capsule") { CapsulePreview()}
+                NavigationLink("Material") { MaterialPreview()}
             } header: {
                 Text("Normal")
             }
@@ -24,8 +24,9 @@ public struct P233_AxisTabView: View {
             Section {
                 NavigationLink("Concave") { CurveConcavePreview()}
                 NavigationLink("Convex") { CurveConvexPreview()}
+                NavigationLink("Bead") { BeadPreview()}
             } header: {
-                Text("CurveStyle")
+                Text("Curve")
             }
             
             Section {
@@ -142,19 +143,19 @@ struct BasicPreview: View {
             AxisTabView(selection: $selection, constant: constant) { state in
                 ATBasicStyle(state, color: color)
             } content: {
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 0, systemName: "01.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 1, systemName: "02.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 2, systemName: "03.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 3, systemName: "04.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 4, systemName: "05.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 5, systemName: "06.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 0, systemName: "01.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 1, systemName: "02.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 2, systemName: "03.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 3, systemName: "04.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 4, systemName: "05.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 5, systemName: "06.circle.fill", safeArea: proxy.safeAreaInsets)
             }
         }
         .animation(.easeInOut, value: constant)
         .navigationTitle("Screen \(selection + 1)")
     }
-    
-    struct ControllView: View {
+
+    struct ControlView: View {
 
         @Binding var selection: Int
         @Binding var constant: ATConstant
@@ -162,7 +163,7 @@ struct BasicPreview: View {
         
         let tag: Int
         let systemName: String
-        let safeAreaTop: CGFloat
+        let safeArea: EdgeInsets
         
         private var backgroundColor: Color {
             let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
@@ -172,97 +173,9 @@ struct BasicPreview: View {
         
         private var content: some View {
             VStack(spacing: 20) {
+                ControlBasicView(selection: $selection, constant: $constant)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("● AxisMode").opacity(0.5)
-                    Picker(selection: $constant.axisMode) {
-                        Text("Top")
-                            .tag(ATAxisMode.top)
-                        Text("Bottom")
-                            .tag(ATAxisMode.bottom)
-                    } label: {
-                        Text("AxisMode")
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Screen Transition").opacity(0.5)
-                    Picker(selection: $constant.screen.transitionMode) {
-                        Text("Slide")
-                            .tag(ATTransitionMode.slide(50))
-                        Text("Opacity")
-                            .tag(ATTransitionMode.opacity)
-                        Text("Scale")
-                            .tag(ATTransitionMode.scale(0.90))
-                        Text("None")
-                            .tag(ATTransitionMode.none)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                    Toggle(isOn: $constant.screen.activeSafeArea) {
-                        Text("SafeArea Toggle")
-                    }
-                    .padding(.horizontal)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Normal Size").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.width, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.width, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                    HStack {
-                        Text("H").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.height, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.height, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Select Width").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.selectWidth, in: -1...200)
-                        Spacer()
-                        Text("\(constant.tab.selectWidth, specifier: "%.2f")")
-                        
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Spacing").opacity(0.5)
-                    Picker(selection: $constant.tab.spacingMode) {
-                        Text("Center")
-                            .tag(ATSpacingMode.center)
-                        Text("Average")
-                            .tag(ATSpacingMode.average)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.leading)
-                    HStack {
-                        Text("Spacing")
-                        Spacer()
-                        Slider(value: $constant.tab.spacing, in: 0...30)
-                        Spacer()
-                        Text("\(constant.tab.spacing, specifier: "%.2f")")
-                    }
-                    .disabled(constant.tab.spacingMode == .average)
-                    .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
-                    .padding(.leading)
-                    
+                    Text("● Basic Style").opacity(0.5)
                     HStack {
                         Text("Color")
                         Spacer()
@@ -282,12 +195,14 @@ struct BasicPreview: View {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }else {
                     ScrollView {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }
             }
@@ -300,7 +215,12 @@ struct BasicPreview: View {
         
         private func getTopPadding() -> CGFloat {
             guard !constant.screen.activeSafeArea else { return 0 }
-            return constant.axisMode == .top ? constant.tab.normalSize.height + safeAreaTop : 0
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
         }
     }
 
@@ -357,7 +277,7 @@ struct BasicPreview: View {
 
 fileprivate
 struct CurveConcavePreview: View {
-
+    
     @State private var selection: Int = 0
     @State private var constant = ATConstant(axisMode: .bottom, screen: .init(activeSafeArea: false), tab: .init())
     @State private var radius: CGFloat = 60
@@ -369,12 +289,12 @@ struct CurveConcavePreview: View {
             AxisTabView(selection: $selection, constant: constant) { state in
                 ATCurveStyle(state, color: color, radius: radius, depth: concaveDepth)
             } content: {
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 0, systemName: "01.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 1, systemName: "02.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 2, systemName: "03.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 3, systemName: "04.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 4, systemName: "05.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 5, systemName: "06.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 0, systemName: "01.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 1, systemName: "02.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 2, systemName: "03.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 3, systemName: "04.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 4, systemName: "05.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 5, systemName: "06.circle.fill", safeArea: proxy.safeAreaInsets)
             }
         }
         .animation(.easeInOut, value: constant)
@@ -383,8 +303,8 @@ struct CurveConcavePreview: View {
         .navigationTitle("Screen \(selection + 1)")
     }
     
-    struct ControllView: View {
-
+    struct ControlView: View {
+        
         @Binding var selection: Int
         @Binding var constant: ATConstant
         @Binding var radius: CGFloat
@@ -393,7 +313,7 @@ struct CurveConcavePreview: View {
         
         let tag: Int
         let systemName: String
-        let safeAreaTop: CGFloat
+        let safeArea: EdgeInsets
         
         private var backgroundColor: Color {
             let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
@@ -403,97 +323,9 @@ struct CurveConcavePreview: View {
         
         private var content: some View {
             VStack(spacing: 20) {
+                ControlBasicView(selection: $selection, constant: $constant)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("● AxisMode").opacity(0.5)
-                    Picker(selection: $constant.axisMode) {
-                        Text("Top")
-                            .tag(ATAxisMode.top)
-                        Text("Bottom")
-                            .tag(ATAxisMode.bottom)
-                    } label: {
-                        Text("AxisMode")
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Screen Transition").opacity(0.5)
-                    Picker(selection: $constant.screen.transitionMode) {
-                        Text("Slide")
-                            .tag(ATTransitionMode.slide(50))
-                        Text("Opacity")
-                            .tag(ATTransitionMode.opacity)
-                        Text("Scale")
-                            .tag(ATTransitionMode.scale(0.90))
-                        Text("None")
-                            .tag(ATTransitionMode.none)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                    Toggle(isOn: $constant.screen.activeSafeArea) {
-                        Text("SafeArea Toggle")
-                    }
-                    .padding(.horizontal)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Normal Size").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.width, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.width, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                    HStack {
-                        Text("H").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.height, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.height, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Select Width").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.selectWidth, in: -1...200)
-                        Spacer()
-                        Text("\(constant.tab.selectWidth, specifier: "%.2f")")
-                        
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Spacing").opacity(0.5)
-                    Picker(selection: $constant.tab.spacingMode) {
-                        Text("Center")
-                            .tag(ATSpacingMode.center)
-                        Text("Average")
-                            .tag(ATSpacingMode.average)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.leading)
-                    HStack {
-                        Text("Spacing")
-                        Spacer()
-                        Slider(value: $constant.tab.spacing, in: 0...30)
-                        Spacer()
-                        Text("\(constant.tab.spacing, specifier: "%.2f")")
-                    }
-                    .disabled(constant.tab.spacingMode == .average)
-                    .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
-                    .padding(.leading)
-                    
+                    Text("● Curve Style").opacity(0.5)
                     HStack {
                         Text("Color")
                         Spacer()
@@ -501,10 +333,7 @@ struct CurveConcavePreview: View {
                     }
                     .padding(.leading)
                     .labelsHidden()
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Background CurveStyle").opacity(0.5)
+                    
                     HStack {
                         Text("Radius")
                         Spacer()
@@ -514,7 +343,7 @@ struct CurveConcavePreview: View {
                     }
                     .labelsHidden()
                     .padding(.leading)
-
+                    
                     HStack {
                         Text("Concave Depth")
                         Spacer()
@@ -537,12 +366,14 @@ struct CurveConcavePreview: View {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }else {
                     ScrollView {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }
             }
@@ -555,7 +386,12 @@ struct CurveConcavePreview: View {
         
         private func getTopPadding() -> CGFloat {
             guard !constant.screen.activeSafeArea else { return 0 }
-            return constant.axisMode == .top ? constant.tab.normalSize.height + safeAreaTop : 0
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
         }
     }
 
@@ -569,7 +405,7 @@ struct CurveConcavePreview: View {
         let systemName: String
         
         @State private var y: CGFloat = 0
-
+        
         var content: some View {
             ZStack(alignment: .leading) {
                 Image(systemName: systemName)
@@ -607,7 +443,7 @@ struct CurveConcavePreview: View {
 
 fileprivate
 struct CurveConvexPreview: View {
-
+    
     @State private var selection: Int = 0
     @State private var constant = ATConstant(axisMode: .bottom, screen: .init(activeSafeArea: false), tab: .init())
     @State private var radius: CGFloat = 60
@@ -619,12 +455,12 @@ struct CurveConvexPreview: View {
             AxisTabView(selection: $selection, constant: constant) { state in
                 ATCurveStyle(state, color: color, radius: radius, depth: convexDepth)
             } content: {
-                ControllView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 0, systemName: "01.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 1, systemName: "02.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 2, systemName: "03.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 3, systemName: "04.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 4, systemName: "05.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 5, systemName: "06.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 0, systemName: "01.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 1, systemName: "02.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 2, systemName: "03.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 3, systemName: "04.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 4, systemName: "05.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, convexDepth: $convexDepth, color: $color, tag: 5, systemName: "06.circle.fill", safeArea: proxy.safeAreaInsets)
             }
         }
         .animation(.easeInOut, value: constant)
@@ -632,9 +468,9 @@ struct CurveConvexPreview: View {
         .animation(.easeInOut, value: convexDepth)
         .navigationTitle("Screen \(selection + 1)")
     }
-    
-    struct ControllView: View {
 
+    struct ControlView: View {
+        
         @Binding var selection: Int
         @Binding var constant: ATConstant
         @Binding var radius: CGFloat
@@ -643,7 +479,7 @@ struct CurveConvexPreview: View {
         
         let tag: Int
         let systemName: String
-        let safeAreaTop: CGFloat
+        let safeArea: EdgeInsets
         
         private var backgroundColor: Color {
             let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
@@ -653,97 +489,9 @@ struct CurveConvexPreview: View {
         
         private var content: some View {
             VStack(spacing: 20) {
+                ControlBasicView(selection: $selection, constant: $constant)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("● AxisMode").opacity(0.5)
-                    Picker(selection: $constant.axisMode) {
-                        Text("Top")
-                            .tag(ATAxisMode.top)
-                        Text("Bottom")
-                            .tag(ATAxisMode.bottom)
-                    } label: {
-                        Text("AxisMode")
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Screen Transition").opacity(0.5)
-                    Picker(selection: $constant.screen.transitionMode) {
-                        Text("Slide")
-                            .tag(ATTransitionMode.slide(50))
-                        Text("Opacity")
-                            .tag(ATTransitionMode.opacity)
-                        Text("Scale")
-                            .tag(ATTransitionMode.scale(0.90))
-                        Text("None")
-                            .tag(ATTransitionMode.none)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                    Toggle(isOn: $constant.screen.activeSafeArea) {
-                        Text("SafeArea Toggle")
-                    }
-                    .padding(.horizontal)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Normal Size").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.width, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.width, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                    HStack {
-                        Text("H").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.height, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.height, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Select Width").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.selectWidth, in: -1...200)
-                        Spacer()
-                        Text("\(constant.tab.selectWidth, specifier: "%.2f")")
-                        
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Spacing").opacity(0.5)
-                    Picker(selection: $constant.tab.spacingMode) {
-                        Text("Center")
-                            .tag(ATSpacingMode.center)
-                        Text("Average")
-                            .tag(ATSpacingMode.average)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.leading)
-                    HStack {
-                        Text("Spacing")
-                        Spacer()
-                        Slider(value: $constant.tab.spacing, in: 0...30)
-                        Spacer()
-                        Text("\(constant.tab.spacing, specifier: "%.2f")")
-                    }
-                    .disabled(constant.tab.spacingMode == .average)
-                    .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
-                    .padding(.leading)
-                    
+                    Text("● Curve Style").opacity(0.5)
                     HStack {
                         Text("Color")
                         Spacer()
@@ -751,10 +499,7 @@ struct CurveConvexPreview: View {
                     }
                     .padding(.leading)
                     .labelsHidden()
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Background CurveStyle").opacity(0.5)
+                    
                     HStack {
                         Text("Radius")
                         Spacer()
@@ -764,7 +509,7 @@ struct CurveConvexPreview: View {
                     }
                     .labelsHidden()
                     .padding(.leading)
-
+                    
                     HStack {
                         Text("Convex Depth")
                         Spacer()
@@ -786,12 +531,14 @@ struct CurveConvexPreview: View {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }else {
                     ScrollView {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }
             }
@@ -804,7 +551,12 @@ struct CurveConvexPreview: View {
         
         private func getTopPadding() -> CGFloat {
             guard !constant.screen.activeSafeArea else { return 0 }
-            return constant.axisMode == .top ? constant.tab.normalSize.height + safeAreaTop : 0
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
         }
     }
 
@@ -855,6 +607,254 @@ struct CurveConvexPreview: View {
 }
 
 fileprivate
+struct BeadPreview: View {
+    
+    @State private var selection: Int = 0
+    @State private var constant = ATConstant(axisMode: .bottom, screen: .init(activeSafeArea: true), tab: .init())
+    @State private var cornerRadius: CGFloat = 26
+    @State private var radius: CGFloat = 30
+    @State private var depth: CGFloat = 0.8
+    @State private var color: Color = .white
+    @State private var marbleColor: Color = .white
+    
+    var body: some View {
+        GeometryReader { proxy in
+            AxisTabView(selection: $selection, constant: constant) { state in
+                if constant.axisMode == .bottom {
+                    ATBeadStyle(state,
+                                  color: color,
+                                  cornerRadius: cornerRadius,
+                                  marbleColor: marbleColor,
+                                  radius: radius,
+                                  depth: depth)
+                }else {
+                    ATBeadStyle(state,
+                                  color: color,
+                                  cornerRadius: cornerRadius,
+                                  marbleColor: marbleColor,
+                                  radius: radius,
+                                  depth: depth)
+                }
+            } content: {
+                ControlView(selection: $selection,
+                            constant: $constant,
+                            cornerRadius: $cornerRadius,
+                            radius: $radius,
+                            depth: $depth,
+                            color: $color,
+                            marbleColor: $marbleColor,
+                            tag: 0,
+                            systemName: "01.circle.fill",
+                            safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection,
+                            constant: $constant,
+                            cornerRadius: $cornerRadius,
+                            radius: $radius,
+                            depth: $depth,
+                            color: $color,
+                            marbleColor: $marbleColor,
+                            tag: 1,
+                            systemName: "02.circle.fill",
+                            safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection,
+                            constant: $constant,
+                            cornerRadius: $cornerRadius,
+                            radius: $radius,
+                            depth: $depth,
+                            color: $color,
+                            marbleColor: $marbleColor,
+                            tag: 2,
+                            systemName: "03.circle.fill",
+                            safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection,
+                            constant: $constant,
+                            cornerRadius: $cornerRadius,
+                            radius: $radius,
+                            depth: $depth,
+                            color: $color,
+                            marbleColor: $marbleColor,
+                            tag: 3,
+                            systemName: "04.circle.fill",
+                            safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection,
+                            constant: $constant,
+                            cornerRadius: $cornerRadius,
+                            radius: $radius,
+                            depth: $depth,
+                            color: $color,
+                            marbleColor: $marbleColor,
+                            tag: 4,
+                            systemName: "05.circle.fill",
+                            safeArea: proxy.safeAreaInsets)
+                
+            }
+        }
+        .animation(.easeInOut, value: constant)
+        .animation(.easeInOut, value: radius)
+        .animation(.easeInOut, value: depth)
+        .animation(.easeInOut, value: marbleColor)
+        .animation(.easeInOut, value: cornerRadius)
+        .navigationTitle("Screen \(selection + 1)")
+    }
+
+    struct ControlView: View {
+        
+        @Binding var selection: Int
+        @Binding var constant: ATConstant
+        @Binding var cornerRadius: CGFloat
+        @Binding var radius: CGFloat
+        @Binding var depth: CGFloat
+        @Binding var color: Color
+        @Binding var marbleColor: Color
+        
+        let tag: Int
+        let systemName: String
+        let safeArea: EdgeInsets
+        
+        private var backgroundColor: Color {
+            let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
+            guard selection <= colors.count - 1 else { return Color(hex: 0x295A76)}
+            return colors[selection].opacity(0.2)
+        }
+        
+        private var content: some View {
+            VStack(spacing: 20) {
+                ControlBasicView(selection: $selection, constant: $constant)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("● Bead Style").opacity(0.5)
+                    HStack {
+                        Text("Radius")
+                        Spacer()
+                        Slider(value: $radius, in: 0...100)
+                        Spacer()
+                        Text("\(radius, specifier: "%.2f")")
+                    }
+                    .labelsHidden()
+                    .padding(.leading)
+                    
+                    HStack {
+                        Text("Depth")
+                        Spacer()
+                        Slider(value: $depth, in: 0...0.8)
+                        Spacer()
+                        Text("\(depth, specifier: "%.2f")")
+                    }
+                    .labelsHidden()
+                    .padding(.leading)
+                    
+                    HStack {
+                        Text("Corner Radius")
+                        Spacer()
+                        Slider(value: $cornerRadius, in: 0...100)
+                        Spacer()
+                        Text("\(cornerRadius, specifier: "%.2f")")
+                    }
+                    .labelsHidden()
+                    .padding(.leading)
+                    
+                    HStack {
+                        Text("Color")
+                        Spacer()
+                        ColorPicker("", selection: $color)
+                    }
+                    .padding(.leading)
+                    .labelsHidden()
+                    
+                    HStack {
+                        Text("Bead Color")
+                        Spacer()
+                        ColorPicker("", selection: $marbleColor)
+                    }
+                    .padding(.leading)
+                    .labelsHidden()
+                    
+                }
+            }
+        }
+        var body: some View {
+            ZStack {
+                Rectangle()
+                    .fill(backgroundColor)
+                if constant.axisMode == .bottom {
+                    ScrollView {
+                        content
+                            .padding()
+                            .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
+                    }
+                }else {
+                    ScrollView {
+                        content
+                            .padding()
+                            .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
+                    }
+                }
+            }
+            .tabItem(tag: tag, normal: {
+                TabButton(constant: $constant, selection: $selection, tag: tag, isSelection: false, systemName: systemName)
+            }, select: {
+                TabButton(constant: $constant, selection: $selection, tag: tag, isSelection: true, systemName: systemName)
+            })
+        }
+        
+        private func getTopPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
+        }
+    }
+
+    struct TabButton: View {
+        
+        @Binding var constant: ATConstant
+        @Binding var selection: Int
+        
+        let tag: Int
+        let isSelection: Bool
+        let systemName: String
+        
+        @State private var y: CGFloat = 0
+        
+        var content: some View {
+            ZStack(alignment: .leading) {
+                Image(systemName: systemName)
+                    .resizable()
+                    .scaledToFit()
+                    .font(.system(size: 24))
+                    .padding(10)
+            }
+            .foregroundColor(isSelection ? Color.accentColor : Color.black)
+            .clipShape(Capsule())
+            .offset(y: y)
+            .onAppear {
+                if isSelection {
+                    withAnimation(.easeInOut(duration: 0.3).delay(0.25)) {
+                        y = constant.axisMode == .top ? -18 : 18
+                    }
+                    withAnimation(.easeInOut(duration: 0.3).delay(0.4)) {
+                        y = constant.axisMode == .top ? -15 : 15
+                    }
+                }else {
+                    y = 0
+                }
+            }
+        }
+        var body: some View {
+            if constant.axisMode == .top {
+                content
+            }else {
+                content
+            }
+        }
+    }
+}
+
+fileprivate
 struct CapsulePreview: View {
 
     @State private var selection: Int = 0
@@ -866,19 +866,19 @@ struct CapsulePreview: View {
             AxisTabView(selection: $selection, constant: constant) { state in
                 ATCapsuleStyle(state, color: color)
             } content: {
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 0, systemName: "01.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 1, systemName: "02.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 2, systemName: "03.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 3, systemName: "04.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 4, systemName: "05.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, color: $color, tag: 5, systemName: "06.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 0, systemName: "01.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 1, systemName: "02.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 2, systemName: "03.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 3, systemName: "04.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 4, systemName: "05.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, color: $color, tag: 5, systemName: "06.circle.fill", safeArea: proxy.safeAreaInsets)
             }
         }
         .animation(.easeInOut, value: constant)
         .navigationTitle("Screen \(selection + 1)")
     }
-    
-    struct ControllView: View {
+
+    struct ControlView: View {
 
         @Binding var selection: Int
         @Binding var constant: ATConstant
@@ -886,7 +886,7 @@ struct CapsulePreview: View {
         
         let tag: Int
         let systemName: String
-        let safeAreaTop: CGFloat
+        let safeArea: EdgeInsets
         
         private var backgroundColor: Color {
             let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
@@ -896,97 +896,9 @@ struct CapsulePreview: View {
         
         private var content: some View {
             VStack(spacing: 20) {
+                ControlBasicView(selection: $selection, constant: $constant)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("● AxisMode").opacity(0.5)
-                    Picker(selection: $constant.axisMode) {
-                        Text("Top")
-                            .tag(ATAxisMode.top)
-                        Text("Bottom")
-                            .tag(ATAxisMode.bottom)
-                    } label: {
-                        Text("AxisMode")
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Screen Transition").opacity(0.5)
-                    Picker(selection: $constant.screen.transitionMode) {
-                        Text("Slide")
-                            .tag(ATTransitionMode.slide(50))
-                        Text("Opacity")
-                            .tag(ATTransitionMode.opacity)
-                        Text("Scale")
-                            .tag(ATTransitionMode.scale(0.90))
-                        Text("None")
-                            .tag(ATTransitionMode.none)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                    Toggle(isOn: $constant.screen.activeSafeArea) {
-                        Text("SafeArea Toggle")
-                    }
-                    .padding(.horizontal)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Normal Size").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.width, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.width, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                    HStack {
-                        Text("H").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.height, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.height, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Select Width").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.selectWidth, in: -1...200)
-                        Spacer()
-                        Text("\(constant.tab.selectWidth, specifier: "%.2f")")
-                        
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Spacing").opacity(0.5)
-                    Picker(selection: $constant.tab.spacingMode) {
-                        Text("Center")
-                            .tag(ATSpacingMode.center)
-                        Text("Average")
-                            .tag(ATSpacingMode.average)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.leading)
-                    HStack {
-                        Text("Spacing")
-                        Spacer()
-                        Slider(value: $constant.tab.spacing, in: 0...30)
-                        Spacer()
-                        Text("\(constant.tab.spacing, specifier: "%.2f")")
-                    }
-                    .disabled(constant.tab.spacingMode == .average)
-                    .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
-                    .padding(.leading)
-                    
+                    Text("● Capsule Style").opacity(0.5)
                     HStack {
                         Text("Color")
                         Spacer()
@@ -1006,12 +918,14 @@ struct CapsulePreview: View {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }else {
                     ScrollView {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }
             }
@@ -1024,7 +938,12 @@ struct CapsulePreview: View {
         
         private func getTopPadding() -> CGFloat {
             guard !constant.screen.activeSafeArea else { return 0 }
-            return constant.axisMode == .top ? constant.tab.normalSize.height + safeAreaTop : 0
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
         }
     }
 
@@ -1091,26 +1010,26 @@ struct MaterialPreview: View {
                     // Fallback on earlier versions
                 }
             } content: {
-                ControllView(selection: $selection, constant: $constant, tag: 0, systemName: "01.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, tag: 1, systemName: "02.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, tag: 2, systemName: "03.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, tag: 3, systemName: "04.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, tag: 4, systemName: "05.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, tag: 5, systemName: "06.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
+                ControlView(selection: $selection, constant: $constant, tag: 0, systemName: "01.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, tag: 1, systemName: "02.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, tag: 2, systemName: "03.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, tag: 3, systemName: "04.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, tag: 4, systemName: "05.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, tag: 5, systemName: "06.circle.fill", safeArea: proxy.safeAreaInsets)
             }
         }
         .animation(.easeInOut, value: constant)
         .navigationTitle("Screen \(selection + 1)")
     }
-    
-    struct ControllView: View {
+
+    struct ControlView: View {
 
         @Binding var selection: Int
         @Binding var constant: ATConstant
         
         let tag: Int
         let systemName: String
-        let safeAreaTop: CGFloat
+        let safeArea: EdgeInsets
         
         private var backgroundColor: Color {
             let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
@@ -1119,99 +1038,7 @@ struct MaterialPreview: View {
         }
         
         private var content: some View {
-            VStack(spacing: 20) {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● AxisMode").opacity(0.5)
-                    Picker(selection: $constant.axisMode) {
-                        Text("Top")
-                            .tag(ATAxisMode.top)
-                        Text("Bottom")
-                            .tag(ATAxisMode.bottom)
-                    } label: {
-                        Text("AxisMode")
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Screen Transition").opacity(0.5)
-                    Picker(selection: $constant.screen.transitionMode) {
-                        Text("Slide")
-                            .tag(ATTransitionMode.slide(50))
-                        Text("Opacity")
-                            .tag(ATTransitionMode.opacity)
-                        Text("Scale")
-                            .tag(ATTransitionMode.scale(0.90))
-                        Text("None")
-                            .tag(ATTransitionMode.none)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                    Toggle(isOn: $constant.screen.activeSafeArea) {
-                        Text("SafeArea Toggle")
-                    }
-                    .padding(.horizontal)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Normal Size").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.width, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.width, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                    HStack {
-                        Text("H").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.height, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.height, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Select Width").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.selectWidth, in: -1...200)
-                        Spacer()
-                        Text("\(constant.tab.selectWidth, specifier: "%.2f")")
-                        
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Spacing").opacity(0.5)
-                    Picker(selection: $constant.tab.spacingMode) {
-                        Text("Center")
-                            .tag(ATSpacingMode.center)
-                        Text("Average")
-                            .tag(ATSpacingMode.average)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.leading)
-                    HStack {
-                        Text("Spacing")
-                        Spacer()
-                        Slider(value: $constant.tab.spacing, in: 0...30)
-                        Spacer()
-                        Text("\(constant.tab.spacing, specifier: "%.2f")")
-                    }
-                    .disabled(constant.tab.spacingMode == .average)
-                    .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
-                    .padding(.leading)
-                }
-            }
+            ControlBasicView(selection: $selection, constant: $constant)
         }
         var body: some View {
             ZStack {
@@ -1222,12 +1049,14 @@ struct MaterialPreview: View {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }else {
                     ScrollView {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }
             }
@@ -1240,7 +1069,12 @@ struct MaterialPreview: View {
         
         private func getTopPadding() -> CGFloat {
             guard !constant.screen.activeSafeArea else { return 0 }
-            return constant.axisMode == .top ? constant.tab.normalSize.height + safeAreaTop : 0
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
         }
     }
 
@@ -1309,11 +1143,11 @@ struct CenterPreview: View {
             AxisTabView(selection: $selection, constant: constant) { state in
                 CustomCenterStyle(state, color: color, radius: radius, depth: concaveDepth)
             } content: {
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 0, systemName: "01.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 1, systemName: "02.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 2, systemName: "plus.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 3, systemName: "04.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 4, systemName: "05.circle.fill", safeAreaTop: proxy.safeAreaInsets.top)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 0, systemName: "01.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 1, systemName: "02.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 2, systemName: "plus.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 3, systemName: "04.circle.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 4, systemName: "05.circle.fill", safeArea: proxy.safeAreaInsets)
             }
         }
         .animation(.easeInOut, value: constant)
@@ -1322,7 +1156,7 @@ struct CenterPreview: View {
         .navigationTitle("Screen \(selection + 1)")
     }
     
-    struct ControllView: View {
+    struct ControlView: View {
 
         @Binding var selection: Int
         @Binding var constant: ATConstant
@@ -1332,7 +1166,7 @@ struct CenterPreview: View {
         
         let tag: Int
         let systemName: String
-        let safeAreaTop: CGFloat
+        let safeArea: EdgeInsets
         
         private var backgroundColor: Color {
             let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
@@ -1342,66 +1176,9 @@ struct CenterPreview: View {
         
         private var content: some View {
             VStack(spacing: 20) {
+                ControlBasicView(selection: $selection, constant: $constant)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("● AxisMode").opacity(0.5)
-                    Picker(selection: $constant.axisMode) {
-                        Text("Top")
-                            .tag(ATAxisMode.top)
-                        Text("Bottom")
-                            .tag(ATAxisMode.bottom)
-                    } label: {
-                        Text("AxisMode")
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Screen Transition").opacity(0.5)
-                    Picker(selection: $constant.screen.transitionMode) {
-                        Text("Slide")
-                            .tag(ATTransitionMode.slide(50))
-                        Text("Opacity")
-                            .tag(ATTransitionMode.opacity)
-                        Text("Scale")
-                            .tag(ATTransitionMode.scale(0.90))
-                        Text("None")
-                            .tag(ATTransitionMode.none)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                    Toggle(isOn: $constant.screen.activeSafeArea) {
-                        Text("SafeArea Toggle")
-                    }
-                    .padding(.horizontal)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Spacing").opacity(0.5)
-                    Picker(selection: $constant.tab.spacingMode) {
-                        Text("Center")
-                            .tag(ATSpacingMode.center)
-                        Text("Average")
-                            .tag(ATSpacingMode.average)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.leading)
-                    HStack {
-                        Text("Spacing")
-                        Spacer()
-                        Slider(value: $constant.tab.spacing, in: 0...30)
-                        Spacer()
-                        Text("\(constant.tab.spacing, specifier: "%.2f")")
-                    }
-                    .disabled(constant.tab.spacingMode == .average)
-                    .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
-                    .padding(.leading)
-                    
+                    Text("● Center Style").opacity(0.5)
                     HStack {
                         Text("Color")
                         Spacer()
@@ -1409,10 +1186,7 @@ struct CenterPreview: View {
                     }
                     .padding(.leading)
                     .labelsHidden()
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Background CurveStyle").opacity(0.5)
+                    
                     HStack {
                         Text("Radius")
                         Spacer()
@@ -1433,7 +1207,6 @@ struct CenterPreview: View {
                     .labelsHidden()
                     .padding(.leading)
                 }
-                
             }
         }
         var body: some View {
@@ -1445,12 +1218,14 @@ struct CenterPreview: View {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }else {
                     ScrollView {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }
             }
@@ -1463,7 +1238,12 @@ struct CenterPreview: View {
         
         private func getTopPadding() -> CGFloat {
             guard !constant.screen.activeSafeArea else { return 0 }
-            return constant.axisMode == .top ? constant.tab.normalSize.height + safeAreaTop : 0
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
         }
     }
 
@@ -1524,11 +1304,11 @@ struct LinePreview: View {
             AxisTabView(selection: $selection, constant: constant) { state in
                 CustomLineStyle(state, color: color)
             } content: {
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 0, systemName: "01.square.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 1, systemName: "02.square.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 2, systemName: "03.square.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 3, systemName: "04.square.fill", safeAreaTop: proxy.safeAreaInsets.top)
-                ControllView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 4, systemName: "05.square.fill", safeAreaTop: proxy.safeAreaInsets.top)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 0, systemName: "01.square.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 1, systemName: "02.square.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 2, systemName: "03.square.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 3, systemName: "04.square.fill", safeArea: proxy.safeAreaInsets)
+                ControlView(selection: $selection, constant: $constant, radius: $radius, concaveDepth: $concaveDepth, color: $color, tag: 4, systemName: "05.square.fill", safeArea: proxy.safeAreaInsets)
             }
         }
         .animation(.easeInOut, value: constant)
@@ -1536,8 +1316,8 @@ struct LinePreview: View {
         .animation(.easeInOut, value: concaveDepth)
         .navigationTitle("Screen \(selection + 1)")
     }
-    
-    struct ControllView: View {
+
+    struct ControlView: View {
 
         @Binding var selection: Int
         @Binding var constant: ATConstant
@@ -1547,7 +1327,7 @@ struct LinePreview: View {
         
         let tag: Int
         let systemName: String
-        let safeAreaTop: CGFloat
+        let safeArea: EdgeInsets
         
         private var backgroundColor: Color {
             let colors = [Color(hex: 0x295A76), Color(hex: 0x7FACAA), Color(hex: 0xEBF4CC), Color(hex: 0xE79875), Color(hex: 0xBA523C), Color(hex: 0x295A76)]
@@ -1557,97 +1337,9 @@ struct LinePreview: View {
         
         private var content: some View {
             VStack(spacing: 20) {
+                ControlBasicView(selection: $selection, constant: $constant)
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("● AxisMode").opacity(0.5)
-                    Picker(selection: $constant.axisMode) {
-                        Text("Top")
-                            .tag(ATAxisMode.top)
-                        Text("Bottom")
-                            .tag(ATAxisMode.bottom)
-                    } label: {
-                        Text("AxisMode")
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                }
-                
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Screen Transition").opacity(0.5)
-                    Picker(selection: $constant.screen.transitionMode) {
-                        Text("Slide")
-                            .tag(ATTransitionMode.slide(50))
-                        Text("Opacity")
-                            .tag(ATTransitionMode.opacity)
-                        Text("Scale")
-                            .tag(ATTransitionMode.scale(0.90))
-                        Text("None")
-                            .tag(ATTransitionMode.none)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .padding(.leading)
-                    Toggle(isOn: $constant.screen.activeSafeArea) {
-                        Text("SafeArea Toggle")
-                    }
-                    .padding(.horizontal)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Normal Size").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.width, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.width, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                    HStack {
-                        Text("H").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.normalSize.height, in: 50...100)
-                        Spacer()
-                        Text("\(constant.tab.normalSize.height, specifier: "%.2f")")
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Select Width").opacity(0.5)
-                    HStack {
-                        Text("W").frame(width: 24, alignment: .leading)
-                        Spacer()
-                        Slider(value: $constant.tab.selectWidth, in: -1...200)
-                        Spacer()
-                        Text("\(constant.tab.selectWidth, specifier: "%.2f")")
-                        
-                    }
-                    .padding(.leading)
-                }
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("● Tab Spacing").opacity(0.5)
-                    Picker(selection: $constant.tab.spacingMode) {
-                        Text("Center")
-                            .tag(ATSpacingMode.center)
-                        Text("Average")
-                            .tag(ATSpacingMode.average)
-                    } label: {
-                        EmptyView()
-                    }
-                    .pickerStyle(.segmented)
-                    .padding(.leading)
-                    HStack {
-                        Text("Spacing")
-                        Spacer()
-                        Slider(value: $constant.tab.spacing, in: 0...30)
-                        Spacer()
-                        Text("\(constant.tab.spacing, specifier: "%.2f")")
-                    }
-                    .disabled(constant.tab.spacingMode == .average)
-                    .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
-                    .padding(.leading)
-                    
+                    Text("● Line Style").opacity(0.5)
                     HStack {
                         Text("Color")
                         Spacer()
@@ -1667,12 +1359,14 @@ struct LinePreview: View {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }else {
                     ScrollView {
                         content
                             .padding()
                             .padding(.top, getTopPadding())
+                            .padding(.bottom, getBottomPadding())
                     }
                 }
             }
@@ -1685,7 +1379,12 @@ struct LinePreview: View {
         
         private func getTopPadding() -> CGFloat {
             guard !constant.screen.activeSafeArea else { return 0 }
-            return constant.axisMode == .top ? constant.tab.normalSize.height + safeAreaTop : 0
+            return constant.axisMode == .top ? constant.tab.normalSize.height + safeArea.top : 0
+        }
+        
+        private func getBottomPadding() -> CGFloat {
+            guard !constant.screen.activeSafeArea else { return 0 }
+            return constant.axisMode == .bottom ? constant.tab.normalSize.height + safeArea.bottom : 0
         }
     }
 
@@ -1705,7 +1404,6 @@ struct LinePreview: View {
                     .scaledToFit()
                     .font(.system(size: 24))
                     .padding(10)
-
             }
             .foregroundColor(isSelection ? Color.accentColor : Color.black)
         }
@@ -1715,6 +1413,109 @@ struct LinePreview: View {
                 content
             }else {
                 content
+            }
+        }
+    }
+}
+
+fileprivate
+struct ControlBasicView: View {
+    
+    @Binding var selection: Int
+    @Binding var constant: ATConstant
+    
+    var body: some View {
+        Group {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("● AxisMode").opacity(0.5)
+                Picker(selection: $constant.axisMode) {
+                    Text("Top")
+                        .tag(ATAxisMode.top)
+                    Text("Bottom")
+                        .tag(ATAxisMode.bottom)
+                } label: {
+                    Text("AxisMode")
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .padding(.leading)
+            }
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Text("● Screen Transition").opacity(0.5)
+                Picker(selection: $constant.screen.transitionMode) {
+                    Text("Slide")
+                        .tag(ATTransitionMode.slide(50))
+                    Text("Opacity")
+                        .tag(ATTransitionMode.opacity)
+                    Text("Scale")
+                        .tag(ATTransitionMode.scale(0.90))
+                    Text("None")
+                        .tag(ATTransitionMode.none)
+                } label: {
+                    EmptyView()
+                }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .padding(.leading)
+                Toggle(isOn: $constant.screen.activeSafeArea) {
+                    Text("SafeArea Toggle")
+                }
+                .padding(.horizontal)
+            }
+            VStack(alignment: .leading, spacing: 8) {
+                Text("● Tab Normal Size").opacity(0.5)
+                HStack {
+                    Text("W").frame(width: 24, alignment: .leading)
+                    Spacer()
+                    Slider(value: $constant.tab.normalSize.width, in: 50...100)
+                    Spacer()
+                    Text("\(constant.tab.normalSize.width, specifier: "%.2f")")
+                }
+                .padding(.leading)
+                HStack {
+                    Text("H").frame(width: 24, alignment: .leading)
+                    Spacer()
+                    Slider(value: $constant.tab.normalSize.height, in: 50...100)
+                    Spacer()
+                    Text("\(constant.tab.normalSize.height, specifier: "%.2f")")
+                }
+                .padding(.leading)
+            }
+            VStack(alignment: .leading, spacing: 8) {
+                Text("● Tab Select Width").opacity(0.5)
+                HStack {
+                    Text("W").frame(width: 24, alignment: .leading)
+                    Spacer()
+                    Slider(value: $constant.tab.selectWidth, in: -1...200)
+                    Spacer()
+                    Text("\(constant.tab.selectWidth, specifier: "%.2f")")
+                    
+                }
+                .padding(.leading)
+            }
+            VStack(alignment: .leading, spacing: 8) {
+                Text("● Tab Spacing").opacity(0.5)
+                Picker(selection: $constant.tab.spacingMode) {
+                    Text("Center")
+                        .tag(ATSpacingMode.center)
+                    Text("Average")
+                        .tag(ATSpacingMode.average)
+                } label: {
+                    EmptyView()
+                }
+                .pickerStyle(.segmented)
+                .padding(.leading)
+                HStack {
+                    Text("Spacing")
+                    Spacer()
+                    Slider(value: $constant.tab.spacing, in: 0...30)
+                    Spacer()
+                    Text("\(constant.tab.spacing, specifier: "%.2f")")
+                }
+                .disabled(constant.tab.spacingMode == .average)
+                .opacity(constant.tab.spacingMode == .average ? 0.5 : 1.0)
+                .padding(.leading)
             }
         }
     }
