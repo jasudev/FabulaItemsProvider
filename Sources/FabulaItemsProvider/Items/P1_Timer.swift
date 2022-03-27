@@ -35,7 +35,7 @@ struct ClockTickView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .center) {
-                ForEach(0..<tickCount) { tick in
+                ForEach(0..<tickCount, id: \.self) { tick in
                     Circle()
                         .fill(tick % 5 == 0 ? Color.fabulaFore1 : Color.fabulaFore2)
                         .frame(width: tick % 5 == 0 ? 5 : 2, height: tick % 5 == 0 ? 5 : 2)

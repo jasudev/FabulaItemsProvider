@@ -363,7 +363,7 @@ struct FabulaLikeEffect: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .center) {
-                ForEach(0..<tickCount) { tick in
+                ForEach(0..<tickCount, id: \.self) { tick in
                     Circle()
                         .scaleEffect(scale)
                         .animation(scale != 1 ? Animation.easeInOut(duration: 0.8) : Animation.easeInOut(duration: 0), value: scale)

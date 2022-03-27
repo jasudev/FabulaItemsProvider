@@ -73,23 +73,27 @@ extension P10_CircleTypography {
         
         var body: some View {
             ZStack {
-                ForEach(1..<(texts.count + 1)) { index in
-                    GeometryReader { proxy in
-                        if index % 2 == 1 {
-                            CircleText(isDynamic: true, sec: store.time * Double(index), text: texts[index - 1], gap: CGFloat(getFontSize(proxy) * CGFloat(index)))
-                                .foregroundColor(Color.fabulaPrimary)
-                        }else {
-                            CircleText(isDynamic: false, sec: store.time * -Double(index), text: texts[index - 1], gap: CGFloat(getFontSize(proxy) * CGFloat(index)))
-                                .foregroundColor(Color.fabulaSecondary)
-                        }
-                    }
-                    .opacity((CGFloat(texts.count) - CGFloat(index - 1)) * 0.2)
+                ForEach(1..<(texts.count + 1), id: \.self) { index in
+                    getContent(index)
+                        .opacity((CGFloat(texts.count) - CGFloat(index - 1)) * 0.2)
                 }
             }
         }
         
         private func getFontSize(_ proxy: GeometryProxy) -> CGFloat {
             return proxy.minSize / 2 * 0.1
+        }
+        
+        private func getContent(_ index: Int) -> some View {
+            GeometryReader { proxy in
+                if index % 2 == 1 {
+                    CircleText(isDynamic: true, sec: store.time * Double(index), text: texts[index - 1], gap: CGFloat(getFontSize(proxy) * CGFloat(index)))
+                        .foregroundColor(Color.fabulaPrimary)
+                }else {
+                    CircleText(isDynamic: false, sec: store.time * -Double(index), text: texts[index - 1], gap: CGFloat(getFontSize(proxy) * CGFloat(index)))
+                        .foregroundColor(Color.fabulaSecondary)
+                }
+            }
         }
     }
     

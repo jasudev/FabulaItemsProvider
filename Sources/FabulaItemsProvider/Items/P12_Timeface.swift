@@ -338,7 +338,7 @@ fileprivate
 struct CircleDotView: View {
     var body: some View {
         GeometryReader { proxy in
-            ForEach(1..<getCount(proxy)) { tick in
+            ForEach(1..<getCount(proxy), id: \.self) { tick in
                 ZStack {
                     Color.clear
                     Circle()

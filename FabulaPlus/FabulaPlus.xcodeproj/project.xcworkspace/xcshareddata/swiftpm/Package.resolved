@@ -38,6 +38,15 @@
         }
       },
       {
+        "package": "AxisSegmentedView",
+        "repositoryURL": "https://github.com/jasudev/AxisSegmentedView.git",
+        "state": {
+          "branch": "main",
+          "revision": "5793f16dfa13cfeefb5a789977834eceb3b9d7a9",
+          "version": null
+        }
+      },
+      {
         "package": "AxisSheet",
         "repositoryURL": "https://github.com/jasudev/AxisSheet.git",
         "state": {

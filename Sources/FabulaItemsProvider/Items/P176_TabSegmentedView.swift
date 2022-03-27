@@ -84,7 +84,7 @@ extension P176_TabSegmentedView {
         
         private var topView: some View {
             HStack(spacing: spacingSize.width) {
-                ForEach(items.indices) { index in
+                ForEach(items.indices, id: \.self) { index in
                     if !isScrollable && index != 0 {
                         Spacer()
                     }
@@ -107,7 +107,7 @@ extension P176_TabSegmentedView {
         private var bottomView: some View {
 #if os(iOS)
             TabView(selection: $index) {
-                ForEach(items.indices) { index in
+                ForEach(items.indices, id: \.self) { index in
                     items[index].bottom
                 }
             }

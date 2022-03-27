@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 234, category: .uiux,
+                     section: "Library",
+                     createDate: "2022-03-27",
+                     title: "AxisSegmentedView",
+                     caption: "How to use the AxisSegmentedView library.",
+                     creator: "jasu",
+                     tags: "github, segmentedView",
+                     view: FAnyView(P234_AxisSegmentedView())),
             ItemData(id: 233, category: .uiux,
                      section: "Library",
                      createDate: "2022-03-13",
