@@ -1,7 +1,7 @@
 //
 //  P234_AxisSegmentedView.swift
 //  
-//
+//  Package : https://github.com/jasudev/AxisSegmentedView.git
 //  Created by jasu on 2022/03/27.
 //  Copyright (c) 2022 jasu All rights reserved.
 //

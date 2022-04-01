@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 235, category: .study,
+                     section: "TabView",
+                     createDate: "2022-04-01",
+                     title: "Tips for using TabView",
+                     caption: "How to handle tapping a tab that has already been selected.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P235_TabViewSelected())),
             ItemData(id: 234, category: .uiux,
                      section: "Library",
                      createDate: "2022-03-27",
