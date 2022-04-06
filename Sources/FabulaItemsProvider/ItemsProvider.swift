@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 236, category: .play,
+                     section: "Color",
+                     createDate: "2022-04-06",
+                     title: "Flat Color",
+                     caption: "Another way to use the AxisSegmentedView library.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P236_FlatColor())),
             ItemData(id: 235, category: .study,
                      section: "TabView",
                      createDate: "2022-04-01",
