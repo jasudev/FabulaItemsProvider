@@ -47,6 +47,9 @@ public struct P235_TabViewSelected: View {
                     }
             }
         }
+#if os(macOS)
+        .padding()
+#endif
     }
 }
 
