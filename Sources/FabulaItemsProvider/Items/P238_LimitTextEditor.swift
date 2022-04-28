@@ -11,7 +11,7 @@ import SwiftUI
 public struct P238_LimitTextEditor: View {
     
     @State private var limitNumber: Int = 30
-    @State private var baseText: String = ""
+    @State private var baseText: String = "Text"
     
     public init() {}
     public var body: some View {
@@ -22,7 +22,12 @@ public struct P238_LimitTextEditor: View {
         VStack {
             Text("Number of characters : \(text.wrappedValue.count)")
                 .foregroundColor(text.wrappedValue.count == limitNumber ? .red : .fabulaForeWB100)
-            TextEditor(text: text)
+            Rectangle()
+                .fill(Color.fabulaFore2)
+                .overlay(
+                    TextEditor(text: text)
+                        .padding(1)
+                )
         }
         .padding()
     }
