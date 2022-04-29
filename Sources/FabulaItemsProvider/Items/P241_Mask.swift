@@ -8,11 +8,12 @@
 
 import SwiftUI
 
-struct P241_Mask: View {
+public struct P241_Mask: View {
     
     private let colors: [Color] = [.yellow, .red,.blue, .purple]
-    
-    var body: some View {
+        
+    public init() {}
+    public var body: some View {
         
         VStack {
             // use mask

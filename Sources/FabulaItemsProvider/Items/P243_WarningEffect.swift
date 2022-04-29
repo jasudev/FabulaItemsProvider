@@ -2,17 +2,18 @@
 //  P243_WarningEffect.swift
 //  
 //
-//  Created by jasu on 2022/04/28.
+//  Created by jasu on 2022/04/29.
 //  Copyright (c) 2022 jasu All rights reserved.
 //
 
 import SwiftUI
 
-struct P243_WarningEffect: View {
+public struct P243_WarningEffect: View {
     
     @State private var interval: CGFloat = 0
     
-    var body: some View {
+    public init() {}
+    public var body: some View {
         VStack {
             Text("Shaking")
                 .font(.title)

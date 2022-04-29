@@ -118,7 +118,7 @@ extension P176_TabSegmentedView {
             GeometryReader { proxy in
                 let size = proxy.size
                 HStack(spacing: 0) {
-                    ForEach(items.indices) { index in
+                    ForEach(items.indices, id: \.self) { index in
                         items[index].bottom
                     }
                     .frame(width: size.width)

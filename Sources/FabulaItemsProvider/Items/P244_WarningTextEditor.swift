@@ -2,7 +2,7 @@
 //  P244_WarningTextEditor.swift
 //  
 //
-//  Created by jasu on 2022/04/28.
+//  Created by jasu on 2022/04/29.
 //  Copyright (c) 2022 jasu All rights reserved.
 //
 
@@ -13,7 +13,7 @@ public struct P244_WarningTextEditor: View {
     @State private var interval: CGFloat = 0
     
     @State private var limitNumber: Int = 30
-    @State private var baseText: String = ""
+    @State private var baseText: String = "Text"
     
     public init() {}
     public var body: some View {

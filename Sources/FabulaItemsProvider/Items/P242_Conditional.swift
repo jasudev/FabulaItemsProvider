@@ -8,11 +8,12 @@
 
 import SwiftUI
 
-struct P242_Conditional: View {
+public struct P242_Conditional: View {
     
     @State private var showBackground: Bool = false
     
-    var body: some View {
+    public init() {}
+    public var body: some View {
         VStack {
             Text("Hello, World!")
                 .padding()

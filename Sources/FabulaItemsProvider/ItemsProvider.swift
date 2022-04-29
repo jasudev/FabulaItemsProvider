@@ -27,10 +27,17 @@ public class ItemsProvider {
     public init() {}
     
     public var items: [ItemData] {
-        [
+        [   ItemData(id: 245, category: .study,
+                     section: "Tip",
+                     createDate: "2022-04-30",
+                     title: "Mirror",
+                     caption: "A way to represent substructures and display styles for instances of any type.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P245_Mirror())),
             ItemData(id: 244, category: .study,
                      section: "View",
-                     createDate: "2022-04-28",
+                     createDate: "2022-04-29",
                      title: "TextEditor",
                      caption: "How to express a shaking effect when a limited number of characters is reached.",
                      creator: "jasu",
@@ -38,7 +45,7 @@ public class ItemsProvider {
                      view: FAnyView(P244_WarningTextEditor())),
             ItemData(id: 243, category: .study,
                      section: "View",
-                     createDate: "2022-04-28",
+                     createDate: "2022-04-29",
                      title: "Shake",
                      caption: "How to express a shaking effect.",
                      creator: "jasu",

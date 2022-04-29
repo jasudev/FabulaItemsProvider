@@ -8,11 +8,12 @@
 
 import SwiftUI
 
-struct P240_DisableAnimations: View {
+public struct P240_DisableAnimations: View {
     
     @State private var toggle: Bool = true
     
-    var body: some View {
+    public init() {}
+    public var body: some View {
         GeometryReader { proxy in
             VStack {
                 Spacer()
