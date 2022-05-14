@@ -27,7 +27,16 @@ public class ItemsProvider {
     public init() {}
     
     public var items: [ItemData] {
-        [   ItemData(id: 245, category: .study,
+        [
+            ItemData(id: 246, category: .play,
+                     section: "Infographic",
+                     createDate: "2022-05-14",
+                     title: "Line Infographic",
+                     caption: "Item statistics line graph of the Fabula project.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P246_FabulaItemsInfographic())),
+            ItemData(id: 245, category: .study,
                      section: "Tip",
                      createDate: "2022-04-30",
                      title: "Mirror",
