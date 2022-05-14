@@ -21,7 +21,7 @@ public struct P246_FabulaItemsInfographic: View {
         GeometryReader { proxy in
             ZStack(alignment: .topLeading) {
                 ScrollView(showsIndicators: false) {
-                    VStack(spacing: 4) {
+                    LazyVStack(spacing: 4) {
                         content(proxy: proxy)
                     }
                 }
