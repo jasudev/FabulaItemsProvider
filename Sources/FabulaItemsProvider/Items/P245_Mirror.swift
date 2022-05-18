@@ -25,6 +25,7 @@ public struct P245_Mirror: View {
                 .font(.title)
                 .dump(dumpState)
         }
+        .padding()
     }
     
     class DumpState: ObservableObject {

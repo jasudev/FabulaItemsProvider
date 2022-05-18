@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 247, category: .study,
+                     section: "Tip",
+                     createDate: "2022-05-15",
+                     title: "ScrollView alignment",
+                     caption: "How to center content in ScrollView.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P247_ScrollViewAlign())),
             ItemData(id: 246, category: .play,
                      section: "Infographic",
                      createDate: "2022-05-14",
