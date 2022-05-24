@@ -28,6 +28,22 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 249, category: .study,
+                     section: "Protocols",
+                     createDate: "2022-05-17",
+                     title: "DynamicProperty",
+                     caption: "An interface for a stored variable that updates an external property of a view.",
+                     creator: "jasu",
+                     tags: "PropertyWrapper",
+                     view: FAnyView(P249_DynamicProperty())),
+            ItemData(id: 248, category: .study,
+                     section: "Protocols",
+                     createDate: "2022-05-16",
+                     title: "AlignmentID",
+                     caption: "Types used to identify alignment guides.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P248_AlignmentID())),
             ItemData(id: 247, category: .study,
                      section: "Tip",
                      createDate: "2022-05-15",
