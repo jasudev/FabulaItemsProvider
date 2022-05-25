@@ -28,6 +28,14 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 250, category: .study,
+                     section: "Protocols",
+                     createDate: "2022-05-18",
+                     title: "DynamicViewContent",
+                     caption: "A type of view that generates views from an underlying collection of data.",
+                     creator: "jasu",
+                     tags: "ForEach, onDelete, onMove, onInsert",
+                     view: FAnyView(P250_DynamicViewContent())),
             ItemData(id: 249, category: .study,
                      section: "Protocols",
                      createDate: "2022-05-17",
