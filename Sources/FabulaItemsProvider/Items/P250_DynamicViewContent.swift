@@ -22,8 +22,10 @@ public struct P250_DynamicViewContent: View {
             .onDelete(perform: deleteItem)
             .onMove(perform: moveItem)
         }
+#if os(iOS)
         .navigationBarTitle("Items")
         .navigationBarItems(trailing: EditButton())
+#endif
     }
     
     func deleteItem(offsets: IndexSet) {
