@@ -10,7 +10,7 @@ import SwiftUI
 
 public struct P250_DynamicViewContent: View {
     
-    @State private var items = ["Item1", "Item2", "Item3", "Item4", "Item5"]
+    @State private var items = ["Swipe1", "Swipe2", "Swipe3", "Swipe4", "Swipe5"]
     
     public init() {}
     public var body: some View {

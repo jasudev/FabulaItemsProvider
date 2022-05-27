@@ -21,7 +21,6 @@ public struct P249_DynamicProperty: View {
                 .cornerRadius(8)
             Divider()
                 .padding()
-            
             Button("Set HELLO") {
                 text = "HELLO"
             }
