@@ -25,7 +25,7 @@ public struct P246_FabulaItemsInfographic: View {
                         content(proxy: proxy)
                     }
                 }
-                let y: CGFloat = CGFloat(ItemsProvider.shared.items.count + 5) * 0.2
+                let y: CGFloat = CGFloat(ItemsProvider.shared.items.count) * 0.193
                 
                 let uiuxCount = ItemsProvider.shared.items.filter{$0.category == .uiux}.count
                 let playCount = ItemsProvider.shared.items.filter{$0.category == .play}.count
