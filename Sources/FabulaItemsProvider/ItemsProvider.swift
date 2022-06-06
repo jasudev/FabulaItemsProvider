@@ -28,6 +28,22 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 256, category: .play,
+                     section: "Control",
+                     createDate: "2022-05-24",
+                     title: "Conscious",
+                     caption: "Don't be self-conscious.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P256_Conscious())),
+            ItemData(id: 255, category: .study,
+                     section: "Protocols",
+                     createDate: "2022-05-23",
+                     title: "DoubleClick",
+                     caption: "How to double-click with a key combination.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P255_DoubleClick()), platformType: .macOS),
             ItemData(id: 254, category: .study,
                      section: "Protocols",
                      createDate: "2022-05-22",

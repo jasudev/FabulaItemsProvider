@@ -37,6 +37,16 @@ struct ContentView_iOS: View {
     }
     
     var body: some View {
+        if isPad {
+            content()
+                .navigationViewStyle(.columns)
+        } else {
+            content()
+                .navigationViewStyle(.stack)
+        }
+    }
+    
+    private func content() -> some View {
         NavigationView {
             listView
                 .background(Color.fabulaBar1)

@@ -9,50 +9,20 @@
 import SwiftUI
 
 public extension Color {
-    static var fabulaBack0: Color  {
-        return Color("fabulaBack0", bundle: .module)
-    }
-    
-    static var fabulaBack1: Color  {
-        return Color("fabulaBack1", bundle: .module)
-    }
-    
-    static var fabulaBack2: Color  {
-        return Color("fabulaBack2", bundle: .module)
-    }
-    
-    static var fabulaFore1: Color  {
-        return Color("fabulaFore1", bundle: .module)
-    }
-    
-    static var fabulaFore2: Color  {
-        return Color("fabulaFore2", bundle: .module)
-    }
-    
-    static var fabulaPrimary: Color  {
-        return Color("fabulaPrimary", bundle: .module)
-    }
-    
-    static var fabulaSecondary: Color  {
-        return Color("fabulaSecondary", bundle: .module)
-    }
-    
-    static var fabulaBar1: Color  {
-        return Color("fabulaBar1", bundle: .module)
-    }
-    
-    static var fabulaBar2: Color  {
-        return Color("fabulaBar2", bundle: .module)
-    }
-    
-    static var fabulaForeWB100: Color  {
-        return Color("fabulaForeWB100", bundle: .module)
-    }
-    
-    static var fabulaBackWB100: Color  {
-        return Color("fabulaBackWB100", bundle: .module)
-    }
-    
+    static var fabulaBack0: Color { Color(#function, bundle: .module) }
+    static var fabulaBack1: Color { Color(#function, bundle: .module) }
+    static var fabulaBack2: Color { Color(#function, bundle: .module) }
+    static var fabulaFore1: Color { Color(#function, bundle: .module) }
+    static var fabulaFore2: Color { Color(#function, bundle: .module) }
+    static var fabulaPrimary: Color { Color(#function, bundle: .module) }
+    static var fabulaSecondary: Color { Color(#function, bundle: .module) }
+    static var fabulaBar1: Color { Color(#function, bundle: .module) }
+    static var fabulaBar2: Color { Color(#function, bundle: .module) }
+    static var fabulaForeWB100: Color { Color(#function, bundle: .module) }
+    static var fabulaBackWB100: Color { Color(#function, bundle: .module) }
+}
+
+public extension Color {
     init(hex: UInt, alpha: Double = 1) {
         self.init(
             .sRGB,
