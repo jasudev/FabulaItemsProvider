@@ -25,16 +25,31 @@ public class ItemsProvider {
     }
     
     public init() {}
-    
     public var items: [ItemData] {
         [
+            ItemData(id: 260, category: .study,
+                     section: "View",
+                     createDate: "2022-06-01",
+                     title: "PickerStyle",
+                     caption: "A type that specifies the appearance and interaction of all pickers within a view hierarchy.",
+                     creator: "jasu",
+                     tags: "PickerStyle",
+                     view: FAnyView(P260_PickerStyle())),
+            ItemData(id: 259, category: .study,
+                     section: "View",
+                     createDate: "2022-06-01",
+                     title: "TextFieldStyle",
+                     caption: "A specification for the appearance and interaction of a text field.",
+                     creator: "jasu",
+                     tags: "TextField",
+                     view: FAnyView(P259_TextFieldStyle())),
             ItemData(id: 258, category: .study,
                      section: "PreferenceKey",
                      createDate: "2022-05-26",
                      title: "Custom PreferenceKey",
                      caption: "A view with multiple children automatically combines its values for a given preference into a single value visible to its ancestors.",
                      creator: "jasu",
-                     tags: "",
+                     tags: "overlayPreferenceValue",
                      view: FAnyView(P258_CustomPreferenceKey())),
             ItemData(id: 257, category: .study,
                      section: "Protocols",
@@ -1642,7 +1657,7 @@ public class ItemsProvider {
                      title: "TextField",
                      caption: "A control that displays an editable text interface.",
                      creator: "jasu",
-                     tags: "",
+                     tags: "TextFieldStyle",
                      view: FAnyView(P57_TextField())),
             ItemData(id: 56, category: .study,
                      section: "Control",
