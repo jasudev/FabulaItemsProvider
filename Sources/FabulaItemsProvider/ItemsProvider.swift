@@ -28,6 +28,22 @@ public class ItemsProvider {
     
     public var items: [ItemData] {
         [
+            ItemData(id: 258, category: .study,
+                     section: "PreferenceKey",
+                     createDate: "2022-05-26",
+                     title: "Custom PreferenceKey",
+                     caption: "A view with multiple children automatically combines its values for a given preference into a single value visible to its ancestors.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P258_CustomPreferenceKey())),
+            ItemData(id: 257, category: .study,
+                     section: "Protocols",
+                     createDate: "2022-05-25",
+                     title: "InsettableShape",
+                     caption: "A shape type that is able to inset itself to produce another shape.",
+                     creator: "jasu",
+                     tags: "",
+                     view: FAnyView(P257_InsettableShape())),
             ItemData(id: 256, category: .play,
                      section: "Control",
                      createDate: "2022-05-24",
