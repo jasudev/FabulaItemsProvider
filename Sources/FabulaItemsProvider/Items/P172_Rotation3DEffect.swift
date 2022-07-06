@@ -26,18 +26,18 @@ public struct P172_Rotation3DEffect: View {
                 .padding()
                 .background(Color.blue)
                 .foregroundColor(Color.fabulaPrimary)
-                .rotation3DEffect(.degrees(degreesX), axis: (x: x ? 1 : 0, y: y ? 1 : 0, z: z ? 1 : 0))
-                .rotation3DEffect(.degrees(degreesY), axis: (x: x ? 1 : 0, y: y ? 1 : 0, z: z ? 1 : 0))
-                .rotation3DEffect(.degrees(degreesZ), axis: (x: x ? 1 : 0, y: y ? 1 : 0, z: z ? 1 : 0))
+                .rotation3DEffect(.degrees(degreesX), axis: (x: x ? 1 : 0, y: 0, z: 0))
+                .rotation3DEffect(.degrees(degreesY), axis: (x: 0, y: y ? 1 : 0, z: 0))
+                .rotation3DEffect(.degrees(degreesZ), axis: (x: 0, y: 0, z: z ? 1 : 0))
             
             Divider()
                 .frame(width: 44)
                 .padding()
             
             VStack(alignment: .leading, spacing: 0) {
-                Text(".rotation3DEffect(.degrees(\(degreesX), axis: (x: \(x ? 1 : 0), y: \(y ? 1 : 0), z: \(z ? 1 : 0))")
-                Text(".rotation3DEffect(.degrees(\(degreesY), axis: (x: \(x ? 1 : 0), y: \(y ? 1 : 0), z: \(z ? 1 : 0))")
-                Text(".rotation3DEffect(.degrees(\(degreesZ), axis: (x: \(x ? 1 : 0), y: \(y ? 1 : 0), z: \(z ? 1 : 0))")
+                Text(".rotation3DEffect(.degrees(\(degreesX), axis: (x: \(x ? 1 : 0), y: 0, z: 0)")
+                Text(".rotation3DEffect(.degrees(\(degreesY), axis: (x: 0, y: \(y ? 1 : 0), z: 0)")
+                Text(".rotation3DEffect(.degrees(\(degreesZ), axis: (x: 0, y: 0, z: \(z ? 1 : 0))")
             }
             .font(.caption)
             .opacity(0.5)
