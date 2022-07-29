@@ -27,6 +27,14 @@ public class ItemsProvider {
     public init() {}
     public var items: [ItemData] {
         [
+            ItemData(id: 261, category: .study,
+                     section: "View",
+                     createDate: "2022-07-25",
+                     title: "BarGraph",
+                     caption: "Progress BarGraph",
+                     creator: "soccer01",
+                     tags: "BarGraph",
+                     view: FAnyView(P261_BarGraph())),
             ItemData(id: 260, category: .study,
                      section: "View",
                      createDate: "2022-06-01",
