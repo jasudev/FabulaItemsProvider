@@ -15,7 +15,7 @@
         "repositoryURL": "https://github.com/jasudev/AnimateText.git",
         "state": {
           "branch": "main",
-          "revision": "2bd78dca1a3bcc82f7004a58d64b4f34dcbf22b5",
+          "revision": "0f478496bb3d8931ae3316c140dfef786434d68d",
           "version": null
         }
       },
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "2c53f531f1bedd253f55d85105409c28ed4a922c",
-          "version": "5.12.3"
+          "revision": "c4b8660bb3ef543fe4bdcaac0db956b32dc5583f",
+          "version": "5.13.0"
         }
       },
       {

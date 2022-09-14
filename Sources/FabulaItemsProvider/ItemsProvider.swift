@@ -27,6 +27,14 @@ public class ItemsProvider {
     public init() {}
     public var items: [ItemData] {
         [
+            ItemData(id: 261, category: .play,
+                     section: "View",
+                     createDate: "2022-09-14",
+                     title: "Circle Text",
+                     caption: "A type that specifies the appearance and interaction of all pickers within a view hierarchy.",
+                     creator: "jasu",
+                     tags: "AnimateText, animation",
+                     view: FAnyView(P261_CircleAnimateText())),
             ItemData(id: 260, category: .study,
                      section: "View",
                      createDate: "2022-06-01",
