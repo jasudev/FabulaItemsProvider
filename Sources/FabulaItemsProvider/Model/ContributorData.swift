@@ -14,4 +14,10 @@ public struct ContributorData {
     public let email: String?
     public let link: String?
     public let imageName: String?
+    
+    var itemCount: Int {
+        return ItemsProvider.shared.items.filter { item in
+            item.creator == name
+        }.count
+    }
 }
