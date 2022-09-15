@@ -15,7 +15,7 @@ public struct ContributorData {
     public let link: String?
     public let imageName: String?
     
-    var itemCount: Int {
+    public var itemCount: Int {
         return ItemsProvider.shared.items.filter { item in
             item.creator == name
         }.count
