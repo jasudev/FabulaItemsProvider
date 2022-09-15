@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  P264_DynamicFontSize.swift
 //
 //
 //  Created by Lee on 2022/09/15.
@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-struct P264_DynamicFontSize: View {
+public struct P264_DynamicFontSize: View {
     private let firstBgColor = Color.fabulaPrimary
     private let secondBgColor = Color.fabulaSecondary
     private let text = "The font size is automatically converted to fit the view size. The font size is automatically converted to fit the view size. "
     @State private var lineLimit = ""
     
-    var body: some View {
+    public var body: some View {
         VStack {
             Spacer()
             VStack {

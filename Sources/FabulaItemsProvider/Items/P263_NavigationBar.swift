@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  P263_NavigationBar.swift
 //
 //
 //  Created by Lee on 2022/08/30.

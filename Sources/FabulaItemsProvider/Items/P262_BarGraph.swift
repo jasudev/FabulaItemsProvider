@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  P262_BarGraph.swift
 //
 //
 //  Created by Lee on 2022/07/15.

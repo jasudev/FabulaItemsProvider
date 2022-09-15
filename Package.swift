@@ -45,7 +45,8 @@ let package = Package(
                            "AxisContribution",
                            "AxisTooltip",
                            "AxisTabView",
-                           "AxisSegmentedView"]),
+                           "AxisSegmentedView"],
+            resources: [.process("Resources")]),
         .testTarget(
             name: "FabulaItemsProviderTests",
             dependencies: ["FabulaItemsProvider"]),
