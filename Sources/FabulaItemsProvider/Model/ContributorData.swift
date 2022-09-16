@@ -20,4 +20,11 @@ public struct ContributorData {
             item.creator == name
         }.count
     }
+    
+    public var image: Image? {
+        if let imageName = imageName {
+            return Image(imageName, bundle: .module)
+        }
+        return nil
+    }
 }
