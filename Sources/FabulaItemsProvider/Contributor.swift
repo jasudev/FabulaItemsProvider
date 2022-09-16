@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+/// Contributors who added items can add contributor information here.
+/// To provide a contributor's profile image, copy the image to Resources/Assets in the package and enter the image name in the imageName attribute.
 public struct Contributor {
     
     public static let list = [

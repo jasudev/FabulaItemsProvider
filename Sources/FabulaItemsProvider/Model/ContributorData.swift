@@ -13,6 +13,8 @@ public struct ContributorData {
     public let location: String?
     public let email: String?
     public let link: String?
+    
+    /// To provide a contributor's profile image, copy the image to Resources/Assets in the package and enter the image name in the imageName attribute.
     public let imageName: String?
     
     public var itemCount: Int {
