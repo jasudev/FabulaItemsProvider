@@ -27,6 +27,14 @@ public class ItemsProvider {
     public init() {}
     public var items: [ItemData] {
         [
+            ItemData(id: 265, category: .uiux,
+                     section: "Container",
+                     createDate: "2022-09-30",
+                     title: "RadioComponent",
+                     caption: "How to develop Radio component using SwiftUI.",
+                     creator: Contributor.jasu.name,
+                     tags: "component",
+                     view: FAnyView(P265_RadioComponent())),
             ItemData(id: 264, category: .study,
                      section: "View",
                      createDate: "2022-09-15",
