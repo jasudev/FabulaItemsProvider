@@ -128,7 +128,7 @@ struct RadioComponent<T: Hashable, Content: View>: View {
     private let value: RadioValue<T>
     private let content: () -> Content
     
-    public var body: some View {
+    var body: some View {
         content()
             .environmentObject(value)
     }
@@ -186,7 +186,7 @@ struct RadioItemModifier<T: Hashable>: ViewModifier {
     @EnvironmentObject private var value: RadioValue<T>
     private var tag: T?
     
-    public func body(content: Content) -> some View {
+    func body(content: Content) -> some View {
         Button {
             value.selection = tag
             value.onTapReceive?(tag)
