@@ -15,7 +15,13 @@ struct P265_RadioComponent: View {
         case vertical
     }
     
+    enum LayoutType: String {
+        case front
+        case behind
+    }
+    
     @State private var alignment: AlignmentType = .vertical
+    @State private var layout: LayoutType = .front
     @State private var selection: Int? = 0
     @Namespace var namespace
     
@@ -28,9 +34,10 @@ struct P265_RadioComponent: View {
             radioContainer()
                 .frame(height: 130)
             Divider().padding()
-            button()
+            buttons()
         }
         .animation(.easeInOut, value: alignment)
+        .animation(.easeInOut, value: layout)
         .padding()
     }
     
@@ -59,22 +66,41 @@ struct P265_RadioComponent: View {
     
     private func item(tag: Int) -> some View {
         HStack(spacing: 0) {
-            Text("Item \(tag)")
-                .font(.callout)
-                .opacity(0.6)
-            Spacer()
-            RadioItem(tag: tag)
+            if layout == .front {
+                RadioItem(tag: tag)
+                    .matchedGeometryEffect(id: "icon\(tag)", in: namespace)
+                Spacer()
+                Text("Item \(tag)")
+                    .font(.callout)
+                    .opacity(0.6)
+                    .matchedGeometryEffect(id: "title\(tag)", in: namespace)
+            } else {
+                Text("Item \(tag)")
+                    .font(.callout)
+                    .opacity(0.6)
+                    .matchedGeometryEffect(id: "title\(tag)", in: namespace)
+                Spacer()
+                RadioItem(tag: tag)
+                    .matchedGeometryEffect(id: "icon\(tag)", in: namespace)
+            }
         }
         .contentShape(Rectangle())
         .frame(width: 70)
         .radioTag(tag)
     }
     
-    private func button() -> some View {
-        Button {
-            alignment = alignment == .vertical ? .horizontal : .vertical
-        } label: {
-            Text("Change Direction")
+    private func buttons() -> some View {
+        VStack {
+            Button {
+                alignment = alignment == .vertical ? .horizontal : .vertical
+            } label: {
+                Text("Change Direction")
+            }
+            Button {
+                layout = layout == .front ? .behind : .front
+            } label: {
+                Text("Change the layout")
+            }
         }
     }
 }
