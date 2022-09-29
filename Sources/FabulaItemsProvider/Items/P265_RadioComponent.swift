@@ -90,7 +90,7 @@ struct P265_RadioComponent: View {
     }
     
     private func buttons() -> some View {
-        VStack {
+        VStack(spacing: 16) {
             Button {
                 alignment = alignment == .vertical ? .horizontal : .vertical
             } label: {
