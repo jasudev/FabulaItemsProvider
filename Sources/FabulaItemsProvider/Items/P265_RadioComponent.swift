@@ -36,8 +36,10 @@ struct P265_RadioComponent: View {
             Divider().padding()
             buttons()
         }
+#if os(iOS)
         .animation(.easeInOut, value: alignment)
         .animation(.easeInOut, value: layout)
+#endif
         .padding()
     }
     
