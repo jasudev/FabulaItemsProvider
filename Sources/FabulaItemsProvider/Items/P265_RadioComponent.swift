@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct P265_RadioComponent: View {
+public struct P265_RadioComponent: View {
     
     enum AlignmentType: String {
         case horizontal
@@ -25,7 +25,8 @@ struct P265_RadioComponent: View {
     @State private var selection: Int? = 0
     @Namespace var namespace
     
-    var body: some View {
+    public init() {}
+    public var body: some View {
         VStack {
             if let selection {
                 Text("Value : \(selection)")

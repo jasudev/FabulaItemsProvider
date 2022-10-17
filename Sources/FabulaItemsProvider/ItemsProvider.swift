@@ -27,6 +27,14 @@ public class ItemsProvider {
     public init() {}
     public var items: [ItemData] {
         [
+            ItemData(id: 266, category: .play,
+                     section: "View",
+                     createDate: "2022-10-16",
+                     title: "ViscosityCanvas",
+                     caption: "How to express viscosity with shapes.",
+                     creator: Contributor.jasu.name,
+                     tags: "Canvas",
+                     view: FAnyView(P266_ViscosityCanvas())),
             ItemData(id: 265, category: .uiux,
                      section: "Container",
                      createDate: "2022-09-30",
