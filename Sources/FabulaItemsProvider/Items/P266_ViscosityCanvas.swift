@@ -9,8 +9,7 @@
 import SwiftUI
 
 public struct P266_ViscosityCanvas: View {
-    
-    @State private var offset: CGSize = .zero
+
     @State private var scale1: CGFloat = 1
     @State private var scale2: CGFloat = 1
     @State private var isFillMode: Bool = true
