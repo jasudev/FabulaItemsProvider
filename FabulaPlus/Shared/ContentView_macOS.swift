@@ -46,7 +46,7 @@ struct ContentView_macOS: View {
             
             HomeView()
         }
-        .preferredColorScheme(colorSchemeDark ? ColorScheme.dark : ColorScheme.light)
+        .environment(\.colorScheme, colorSchemeDark ? ColorScheme.dark : ColorScheme.light)
     }
 }
 

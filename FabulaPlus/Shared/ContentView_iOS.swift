@@ -65,7 +65,7 @@ struct ContentView_iOS: View {
                 .navigationBarColor(backgroundColor: Color.clear, titleColor: Color.fabulaPrimary)
                 .navigationBarTitleDisplayMode(.inline)
         }
-        .preferredColorScheme(colorSchemeDark ? ColorScheme.dark : ColorScheme.light)
+        .environment(\.colorScheme, colorSchemeDark ? ColorScheme.dark : ColorScheme.light)
     }
 }
 
