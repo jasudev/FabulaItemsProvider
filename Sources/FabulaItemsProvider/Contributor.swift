@@ -18,5 +18,5 @@ public struct Contributor {
     ]
     
     public static let jasu = ContributorData(name: "jasu", location: "Korea", email: "jasudev@gmail.com", link: "https://github.com/jasudev", imageName: "jasu")
-    public static let soccer01 = ContributorData(name: "soccer01", location: "Korea", email: nil, link: nil, imageName: nil)
+    public static let soccer01 = ContributorData(name: "soccer01", location: "Korea", email: "cudo0159@gmail.com", link: nil, imageName: nil)
 }
