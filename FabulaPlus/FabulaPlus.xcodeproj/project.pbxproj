@@ -20,6 +20,7 @@
 		4BC41898278476630092E570 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC41897278476630092E570 /* NavigationBarModifier.swift */; };
 		4BC4189B2784788B0092E570 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4189A2784788B0092E570 /* ItemRowView.swift */; };
 		4BC4189C2784788B0092E570 /* ItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC4189A2784788B0092E570 /* ItemRowView.swift */; };
+		4BE17FF12925C9A50015265D /* MacViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE17FEF2925C9A50015265D /* MacViewModel.swift */; };
 		4BEB602828E41E8C00D8D213 /* FabulaItemsProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 4BEB602728E41E8C00D8D213 /* FabulaItemsProvider */; };
 		4BEB602A28E41E9400D8D213 /* FabulaItemsProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 4BEB602928E41E9400D8D213 /* FabulaItemsProvider */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		4BC41893278468E00092E570 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4BC41897278476630092E570 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		4BC4189A2784788B0092E570 /* ItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRowView.swift; sourceTree = "<group>"; };
+		4BE17FEF2925C9A50015265D /* MacViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +109,7 @@
 			children = (
 				4BAD0CA02782D697007154C8 /* FabulaPlusApp.swift */,
 				4B4A0A532785349300F9AD40 /* ContentView_iOS.swift */,
-				4B4A0A562785349E00F9AD40 /* ContentView_macOS.swift */,
+				4BE17FF22925C9B50015265D /* ContentView_macOS */,
 				4BC4189A2784788B0092E570 /* ItemRowView.swift */,
 				4BC41893278468E00092E570 /* HomeView.swift */,
 				4B4A0A4F278530B400F9AD40 /* Extensions */,
@@ -139,6 +141,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4BE17FF22925C9B50015265D /* ContentView_macOS */ = {
+			isa = PBXGroup;
+			children = (
+				4BE17FEF2925C9A50015265D /* MacViewModel.swift */,
+				4B4A0A562785349E00F9AD40 /* ContentView_macOS.swift */,
+			);
+			path = ContentView_macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +274,7 @@
 			files = (
 				4BC41895278468E00092E570 /* HomeView.swift in Sources */,
 				4BC4189C2784788B0092E570 /* ItemRowView.swift in Sources */,
+				4BE17FF12925C9A50015265D /* MacViewModel.swift in Sources */,
 				4B4A0A582785349E00F9AD40 /* ContentView_macOS.swift in Sources */,
 				4B5D4F7827855AC900FCAAAD /* View+Extensions.swift in Sources */,
 				4BAD0CB12782D69A007154C8 /* FabulaPlusApp.swift in Sources */,
