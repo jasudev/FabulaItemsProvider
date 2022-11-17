@@ -48,7 +48,10 @@ struct ContentView_macOS: View {
                             }
                         }, label: {
                             Image(systemName: "sidebar.left")
+                                .resizable()
+                                .scaledToFit()
                                 .foregroundColor(Color.accentColor)
+                                .frame(width: 22, height: 22)
                         })
                         Spacer()
                         Toggle(colorSchemeDark ? "Light" : "Dark", isOn: $colorSchemeDark)
