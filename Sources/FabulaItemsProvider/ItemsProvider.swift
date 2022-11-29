@@ -5,6 +5,7 @@
 //  Created by jasu on 2022/01/01.
 //  Copyright (c) 2022 jasu All rights reserved.
 //
+// Due to an issue where a crash occurs when using @Namespace in NavigationView Items 185, 176, 162, 161 are temporarily removed from macOS
 
 import SwiftUI
 
@@ -706,7 +707,7 @@ public class ItemsProvider {
                      caption: "How to arrange the text in a circle.",
                      creator: Contributor.jasu.name,
                      tags: "",
-                     view: FAnyView(P185_CircleAlignment())),
+                     view: FAnyView(P185_CircleAlignment()), platformType: .iOS),
             ItemData(id: 184, category: .uiux,
                      section: "Control",
                      createDate: "2021-12-10",
@@ -778,7 +779,7 @@ public class ItemsProvider {
                      caption: "How to customize the segmented control view.",
                      creator: Contributor.jasu.name,
                      tags: "",
-                     view: FAnyView(P176_TabSegmentedView())),
+                     view: FAnyView(P176_TabSegmentedView()), platformType: .iOS),
             ItemData(id: 175, category: .study,
                      section: "Gesture",
                      createDate: "2021-12-03",
@@ -890,7 +891,7 @@ public class ItemsProvider {
                      caption: "Screen switching interaction using Namespace.",
                      creator: Contributor.jasu.name,
                      tags: "animation",
-                     view: FAnyView(P162_ScreenTransition())),
+                     view: FAnyView(P162_ScreenTransition()), platformType: .iOS),
             ItemData(id: 161, category: .study,
                      section: "Animation",
                      createDate: "2021-11-26",
@@ -898,7 +899,7 @@ public class ItemsProvider {
                      caption: "A dynamic property type that allows access to a namespace defined by the persistent identity of the object containing the property (e.g. a view).",
                      creator: Contributor.jasu.name,
                      tags: "matchedGeometryEffect",
-                     view: FAnyView(P161_Namespace())),
+                     view: FAnyView(P161_Namespace()), platformType: .iOS),
             ItemData(id: 160, category: .study,
                      section: "View",
                      createDate: "2021-11-26",
