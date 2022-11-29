@@ -34,7 +34,6 @@ fileprivate struct HueColorPicker: View {
         for hue in stride(from: 0.0, through: 1.0, by: 0.001) {
             colors.append(Color(hue: hue, saturation: 1, brightness: 1))
         }
-        print(Date(), ": ", colors.count)
         
         return LinearGradient(colors: colors,
                               startPoint: .leading,
