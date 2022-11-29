@@ -1,10 +1,3 @@
-//
-//  P270_HueColorPicker.swift
-//  LocalFabulaItems
-//
-//  Created by Taylor Geisse on 11/28/22.
-//
-
 import SwiftUI
 
 struct P270_HueColorPicker: View {

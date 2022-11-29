@@ -1,13 +1,6 @@
-//
-//  ShapeGenerator.swift
-//  Random SwiftUI
-//
-//  Created by Taylor Geisse on 11/21/22.
-//
-
 import SwiftUI
 
-struct P269_ShapeGenerator: View {
+struct P273_ShapeGenerator: View {
     var body: some View {
         SolarSystem()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -139,7 +132,7 @@ fileprivate struct RandomShape: Shape {
     }
 }
 
-// from P229_StarShape
+// From P229_StarShape
 fileprivate
 struct Star: Shape {
     
@@ -189,8 +182,8 @@ struct Star: Shape {
     }
 }
 
-struct P269_ShapeGenerator_Previews: PreviewProvider {
+struct P273_ShapeGenerator_Previews: PreviewProvider {
     static var previews: some View {
-        P269_ShapeGenerator()
+        P273_ShapeGenerator()
     }
 }

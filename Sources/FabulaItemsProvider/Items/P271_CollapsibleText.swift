@@ -1,13 +1,6 @@
-//
-//  SwiftUIView.swift
-//
-//
-//  Created by Taylor Geisse on 11/16/22.
-//
-
 import SwiftUI
 
-struct P267_CollapsibleText: View {
+struct P271_CollapsibleText: View {
     let foregroundColor: Color = .fabulaFore1
     let backgroundColor: Color = .fabulaPrimary
     
@@ -74,8 +67,8 @@ fileprivate struct CollapsibleText: View {
     }
 }
 
-struct P267_CollapsibleText_Previews: PreviewProvider {
+struct P271_CollapsibleText_Previews: PreviewProvider {
     static var previews: some View {
-        P267_CollapsibleText()
+        P271_CollapsibleText()
     }
 }

@@ -1,13 +1,6 @@
-//
-//  P268_CollapsibleView.swift
-//  LocalFabulaItems
-//
-//  Created by Taylor Geisse on 11/18/22.
-//
-
 import SwiftUI
 
-struct P268_CollapsibleView: View {
+struct P272_CollapsibleView: View {
     var body: some View {
         CollapsibleView(
             Image(systemName: "snow")
@@ -58,8 +51,8 @@ fileprivate struct CollapsibleView<Content: View>: View {
     }
 }
 
-struct P268_CollapsibleView_Previews: PreviewProvider {
+struct P272_CollapsibleView_Previews: PreviewProvider {
     static var previews: some View {
-        P268_CollapsibleView()
+        P272_CollapsibleView()
     }
 }
