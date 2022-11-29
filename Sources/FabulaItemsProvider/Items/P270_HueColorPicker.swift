@@ -124,6 +124,7 @@ fileprivate struct SliderStack: View {
                 Text(label)
                     .font(.system(size: 14))
             }
+            
             ColorSlider(element: $element, sliderFill: sliderFill)
         }
     }
@@ -161,7 +162,9 @@ fileprivate struct CustomSlider: View {
                 ZStack {
                     Circle()
                         .stroke(Color.fabulaFore2, lineWidth: 1)
-                        .background(Circle().fill(Color.fabulaFore1))
+                        .background(Circle()
+                            .fill(Color.fabulaFore1)
+                        )
                         
                     Text("\(Int(value * 100))")
                         .font(.system(size: 10))
