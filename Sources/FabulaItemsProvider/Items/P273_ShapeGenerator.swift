@@ -86,6 +86,7 @@ fileprivate struct EllipseAnimation: Animatable, ViewModifier {
     
     private var yOffset: Double {
         let offset = (a * b) / sqrt(pow(a, 2) + (pow(b, 2) / pow(tan(radians), 2)))
+        
         if 0 <= angle && angle <= 180 { return 0.5 - offset / 2 }
         
         return 0.5 + offset / 2
