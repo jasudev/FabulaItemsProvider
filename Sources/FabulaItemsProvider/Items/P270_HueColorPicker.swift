@@ -82,6 +82,7 @@ fileprivate struct HueColorPicker: View {
             VStack(alignment: .center, spacing: 10) {
                 FilledBorderedRectangle(linewidth: 2, fillColor: hueColor)
                     .frame(width: 100, height: 100)
+                
                 Text("Color(hue: \(hue), saturation: \(saturation), brightness: \(brightness), opacity: \(opacity)")
                     .multilineTextAlignment(.center)
                     .font(.system(size: 12))
@@ -94,6 +95,7 @@ fileprivate struct HueColorPicker: View {
                 HStack(spacing: 10) {
                     VStack(spacing: 20) { controlsGroupOne }
                         .frame(width: 300)
+                    
                     VStack(spacing: 20) { controlsGroupTwo }
                         .frame(width: 300)
                 }
@@ -123,7 +125,9 @@ fileprivate struct SliderStack: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 1) {
             HStack {
-                Spacer().frame(width: 10)
+                Spacer()
+                    .frame(width: 10)
+                
                 Text(label)
                     .font(.system(size: 14))
             }
@@ -148,6 +152,7 @@ fileprivate struct CustomSlider: View {
     let capsuleFill: LinearGradient
     
     @State private var dragStartValue: Double? = nil
+    private var rangeMiddle: Double { (range.upperBound / 2) + range.lowerBound }
     
     var body: some View {
         GeometryReader { geometry in
@@ -171,7 +176,7 @@ fileprivate struct CustomSlider: View {
                     
                 }
                 .frame(height: geometry.size.height * 0.85)
-                .offset(x: sliderWidth * (value - rangeMiddle(range)))
+                .offset(x: sliderWidth * (value - rangeMiddle))
                 .gesture(DragGesture()
                     .onChanged {
                         if dragStartValue == nil {
@@ -189,10 +194,6 @@ fileprivate struct CustomSlider: View {
             }
         }
     }
-}
-
-fileprivate func rangeMiddle(_ range: ClosedRange<Double>) -> Double {
-    return (range.upperBound / 2) + range.lowerBound
 }
 
 fileprivate struct FilledBorderedRectangle: View {
