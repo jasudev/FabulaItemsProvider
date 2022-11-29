@@ -52,7 +52,7 @@ public class ItemsProvider {
                      tags: "collapsible, expandable",
                      view: FAnyView(P268_CollapsibleView())),
             ItemData(id: 267, category: .uiux,
-                     section: "Font",
+                     section: "View",
                      createDate: "2022-11-16",
                      title: "Collapsible Text",
                      caption: "An expandable text view.",
