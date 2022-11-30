@@ -223,7 +223,6 @@
 			);
 			mainGroup = 4BAD0C9A2782D697007154C8;
 			packageReferences = (
-				4BEB602628E41E7F00D8D213 /* XCRemoteSwiftPackageReference "FabulaItemsProvider" */,
 			);
 			productRefGroup = 4BAD0CA82782D69A007154C8 /* Products */;
 			projectDirPath = "";
@@ -547,17 +546,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		4BEB602628E41E7F00D8D213 /* XCRemoteSwiftPackageReference "FabulaItemsProvider" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jasudev/FabulaItemsProvider";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		4BEB602728E41E8C00D8D213 /* FabulaItemsProvider */ = {
