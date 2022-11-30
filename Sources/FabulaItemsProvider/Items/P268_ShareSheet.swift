@@ -12,6 +12,7 @@ public struct P268_ShareSheet: View {
     
     private let shareItem = URL(string: "https://www.google.com")
     
+    public init() {}
     public var body: some View {
         #if os(iOS)
             if #available(iOS 16.0, *) {

@@ -13,6 +13,7 @@ public struct P264_DynamicFontSize: View {
     private let text = "The font size is automatically converted to fit the view size. The font size is automatically converted to fit the view size. "
     @State private var lineLimit = ""
     
+    public init() {}
     public var body: some View {
         VStack {
             Spacer()

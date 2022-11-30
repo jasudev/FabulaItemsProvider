@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct P272_CollapsibleView: View {
-    var body: some View {
+public struct P272_CollapsibleView: View {
+    
+    public init() {}
+    public var body: some View {
         CollapsibleView(
             Image(systemName: "snow")
                 .resizable()

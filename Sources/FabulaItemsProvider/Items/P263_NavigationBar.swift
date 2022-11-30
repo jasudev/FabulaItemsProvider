@@ -13,6 +13,7 @@ public struct P263_NavigationBar: View {
     @State private var showLeftAlert: Bool = false
     @State private var showRightAlert: Bool = false
     
+    public init() {}
     public var body: some View {
     #if os(iOS)
         NavigationView {

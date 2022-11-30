@@ -19,6 +19,7 @@ public struct P267_LazyGridView: View {
                    GridItem(.flexible()),
                    GridItem(.flexible())]
     
+    public init() {}
     public var body: some View {
         VStack {
             Text("LazyVGrid")

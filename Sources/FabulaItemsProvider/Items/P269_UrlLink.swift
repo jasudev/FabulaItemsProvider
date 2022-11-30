@@ -14,6 +14,7 @@ public struct P269_UrlLink: View {
     @State private var isShowSFView = false
     private var url = URL(string: "https://www.google.com")
     
+    public init() {}
     public var body: some View {
         VStack {
             Link(destination: url!) {

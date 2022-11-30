@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct P270_HueColorPicker: View {
-    var body: some View {
+public struct P270_HueColorPicker: View {
+    
+    public init() {}
+    public var body: some View {
         HueColorPicker()
     }
 }

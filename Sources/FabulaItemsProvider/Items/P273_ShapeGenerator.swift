@@ -1,7 +1,9 @@
 import SwiftUI
 
-struct P273_ShapeGenerator: View {
-    var body: some View {
+public struct P273_ShapeGenerator: View {
+    
+    public init() {}
+    public var body: some View {
         SolarSystem()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
