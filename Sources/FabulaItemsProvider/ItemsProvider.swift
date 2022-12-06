@@ -64,7 +64,7 @@ public class ItemsProvider {
                      section: "Shape",
                      createDate: "2022-11-30",
                      title: "Raindrop Shape",
-                     caption: "One way to dray a raindrop.",
+                     caption: "One way to draw a raindrop.",
                      creator: Contributor.tgeisse.name,
                      tags: "raindrop, shape, example",
                      view: FAnyView(P274_RaindropShape())),
