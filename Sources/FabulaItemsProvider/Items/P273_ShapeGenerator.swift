@@ -1,3 +1,10 @@
+//
+//  P273_ShapeGenerator.swift
+//
+//
+//  Created by tgeisse on 11/28/22.
+//
+
 import SwiftUI
 
 public struct P273_ShapeGenerator: View {
@@ -48,8 +55,8 @@ fileprivate struct SolarSystemItem: Identifiable {
 
 fileprivate struct SolarSystemShape: View {
     @State private var angle = Double.random(in: 0..<360)
-    @State private var a = Double.random(in: 0.1...0.9)
-    @State private var b = Double.random(in: 0.1...0.9)
+    @State private var a = Double.random(in: 0.25...0.9)
+    @State private var b = Double.random(in: 0.25...0.9)
     
     var body: some View {
         GeometryReader { proxy in
@@ -66,7 +73,6 @@ fileprivate struct SolarSystemShape: View {
 
 fileprivate struct EllipseAnimation: Animatable, ViewModifier {
     var angle: Double
-    private var radians: Double { angle * (.pi / 180) }
     let proxy: GeometryProxy
     let a: Double
     let b: Double
@@ -78,20 +84,11 @@ fileprivate struct EllipseAnimation: Animatable, ViewModifier {
     
     
     private var xOffset: Double {
-        let offset = (a * b) / sqrt(pow(b, 2) + pow(a, 2) * pow(tan(radians), 2))
-        
-        if 0 <= angle && angle <= 90 { return 0.5 - offset / 2}
-        if 270 <= angle && angle <= 360 { return 0.5 - offset / 2 }
-        
-        return 0.5 + offset / 2
+        (a / 2) * cos(2 * (angle / 360) * .pi) + 0.5
     }
     
     private var yOffset: Double {
-        let offset = (a * b) / sqrt(pow(a, 2) + (pow(b, 2) / pow(tan(radians), 2)))
-        
-        if 0 <= angle && angle <= 180 { return 0.5 - offset / 2 }
-        
-        return 0.5 + offset / 2
+        (b / 2) * sin(2 * (angle / 360) * .pi) + 0.5
     }
     
     func body(content: Content) -> some View {

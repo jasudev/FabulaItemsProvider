@@ -1,3 +1,10 @@
+//
+//  P272_CollapsibleView.swift
+//
+//
+//  Created by tgeisse on 11/18/22.
+//
+
 import SwiftUI
 
 public struct P272_CollapsibleView: View {
@@ -41,7 +48,7 @@ fileprivate struct CollapsibleView<Content: View>: View {
         }
         .padding()
         .background(RoundedRectangle(cornerRadius: 6.0)
-            .stroke(Color.fabulaBar2))
+            .stroke(Color.fabulaFore1))
         .animation(.easeOut, value: isCollapsed)
     }
     

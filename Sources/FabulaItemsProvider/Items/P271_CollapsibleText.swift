@@ -1,3 +1,10 @@
+//
+//  P271_CollapsibleText.swift
+//
+//
+//  Created by tgeisse on 11/16/22.
+//
+
 import SwiftUI
 
 public struct P271_CollapsibleText: View {

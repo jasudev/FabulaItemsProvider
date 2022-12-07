@@ -1,3 +1,10 @@
+//
+//  P270_HueColorPicker.swift
+//
+//
+//  Created by tgeisse on 11/28/22.
+//
+
 import SwiftUI
 
 public struct P270_HueColorPicker: View {
@@ -37,22 +44,22 @@ fileprivate struct HueColorPicker: View {
     
     private var saturationGradient: LinearGradient {
         LinearGradient(colors: [
-            Color(hue: hue, saturation: 0, brightness: 1),
-            Color(hue: hue, saturation: 1, brightness: 1)
+            Color(hue: hue, saturation: 0, brightness: brightness, opacity: opacity),
+            Color(hue: hue, saturation: 1, brightness: brightness, opacity: opacity)
         ], startPoint: .leading, endPoint: .trailing)
     }
     
     private var brightnessGradient: LinearGradient {
         LinearGradient(colors: [
-            Color(hue: hue, saturation: 1, brightness: 0),
-            Color(hue: hue, saturation: 1, brightness: 1)
+            Color(hue: hue, saturation: saturation, brightness: 0, opacity: opacity),
+            Color(hue: hue, saturation: saturation, brightness: 1, opacity: opacity)
         ], startPoint: .leading, endPoint: .trailing)
     }
     
     private var opacityGradient: LinearGradient {
         LinearGradient(colors: [
-            Color(hue: hue, saturation: 1, brightness: 1, opacity: 0),
-            Color(hue: hue, saturation: 1, brightness: 1, opacity: 1)
+            Color(hue: hue, saturation: saturation, brightness: brightness, opacity: 0),
+            Color(hue: hue, saturation: saturation, brightness: brightness, opacity: 1)
         ], startPoint: .leading, endPoint: .trailing)
     }
     
@@ -148,7 +155,9 @@ fileprivate struct CustomSlider: View {
     let capsuleFill: LinearGradient
     
     @State private var dragStartValue: Double? = nil
-    private var rangeMiddle: Double { (range.upperBound / 2) + range.lowerBound }
+    private var rangeMiddle: Double {
+        ((range.upperBound - range.lowerBound) / 2) + range.lowerBound
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -165,11 +174,12 @@ fileprivate struct CustomSlider: View {
                     Circle()
                         .stroke(Color.fabulaFore2, lineWidth: 1)
                         .background(Circle()
-                            .fill(Color.fabulaFore1)
+                            .fill(.white)
                         )
                         
                     Text("\(Int(value * 100))")
                         .font(.system(size: 10))
+                        .foregroundColor(.black)
                         .minimumScaleFactor(0.5)
                     
                 }
