@@ -32,12 +32,14 @@ fileprivate struct RotatingCard: View {
                                             displaySide: $displaySide))
                 .modifier(RotatingAnimation(angle: rotationAngle))
                 .onAppear {
-                    withAnimation(.linear(duration: 5).repeatForever(autoreverses: false)) {
-                        flippingAngle = 360
-                    }
-                    
-                    withAnimation(.linear(duration: 12).repeatForever(autoreverses: false)) {
-                        rotationAngle = 360
+                    DispatchQueue.main.async {
+                        withAnimation(.linear(duration: 5).repeatForever(autoreverses: false)) {
+                            flippingAngle = 360
+                        }
+                        
+                        withAnimation(.linear(duration: 12).repeatForever(autoreverses: false)) {
+                            rotationAngle = 360
+                        }
                     }
                 }
         }
