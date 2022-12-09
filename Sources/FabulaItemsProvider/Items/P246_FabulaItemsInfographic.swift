@@ -102,7 +102,9 @@ public struct P246_FabulaItemsInfographic: View {
         .offset(x: offset.x, y: offset.y)
     }
     
+    @ViewBuilder
     private func content(proxy: GeometryProxy) -> some View {
+        let delta: CGFloat = (CGFloat(ItemsProvider.shared.items.count) * 0.3) / (2 * CGFloat(ItemsProvider.shared.items.count))
         ForEach(ItemsProvider.shared.items) { item in
             HStack(spacing: 0) {
                 Rectangle()
@@ -124,30 +126,30 @@ public struct P246_FabulaItemsInfographic: View {
                     ZStack {
                         if item.category == .uiux {
                             curveLine(endPoint: CGPoint(x: proxy.size.width - trailingPadding,
-                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 100 - CGFloat(item.id) * 0.18))
+                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 100 - CGFloat(item.id) * delta))
                             .foregroundColor(colors[0])
                         } else if item.category == .play {
                             curveLine(endPoint: CGPoint(x: proxy.size.width - trailingPadding,
-                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 200 - CGFloat(item.id) * 0.18))
+                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 200 - CGFloat(item.id) * delta))
                             .foregroundColor(colors[1])
                         } else {
                             curveLine(endPoint: CGPoint(x: proxy.size.width - trailingPadding,
-                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 300 - CGFloat(item.id) * 0.18))
+                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 300 - CGFloat(item.id) * delta))
                             .foregroundColor(colors[2])
                         }
                     }
                     ZStack {
                         if item.platformType == .both {
                             curveLine(endPoint: CGPoint(x: proxy.size.width / 2,
-                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 150 - CGFloat(item.id) * 0.18))
+                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 150 - CGFloat(item.id) * delta))
                             .foregroundColor(colors[3])
                         } else if item.platformType == .iOS {
                             curveLine(endPoint: CGPoint(x: proxy.size.width / 2,
-                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 250 - CGFloat(item.id) * 0.18))
+                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 250 - CGFloat(item.id) * delta))
                             .foregroundColor(colors[4])
                         } else {
                             curveLine(endPoint: CGPoint(x: proxy.size.width / 2,
-                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 350 - CGFloat(item.id) * 0.18))
+                                                        y: proxy.frame(in: .global).origin.y - (proxy2.frame(in: .global).origin.y) + 350 - CGFloat(item.id) * delta))
                             .foregroundColor(colors[5])
                         }
                     }
