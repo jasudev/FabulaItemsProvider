@@ -7,35 +7,35 @@
 
 import SwiftUI
 
-struct P279_BottomSheet: View {
+public struct P279_BottomSheet: View {
     
     @State private var isActive = false
+    
+    public init() { }
 
-    var body: some View {
+    public var body: some View {
         Button("Tap to Show BottomSheet") {
             withAnimation { isActive = true }
         }
-        .bottomSheet($isActive) {
+        .bottomSheet($isActive, .auto) {
             BottomSheetContent()
         }
     }
     
     @ViewBuilder func BottomSheetContent() -> some View {
-        ScrollView {
-            VStack {
-                ForEach(0..<90) {
-                    Text("Index \($0)")
-                        .padding()
-                        .background(Color.yellow)
-                        .cornerRadius(5.0)
-                }
+        VStack {
+            ForEach(1..<6) {
+                Text("Index \($0)")
+                    .font(.subheadline)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.yellow)
+                    .cornerRadius(5.0)
             }
         }
+        .padding(.top, 16)
+        .padding(.bottom, 32)
     }
-}
-
-#Preview {
-    P279_BottomSheet()
 }
 
 fileprivate extension View {
@@ -134,7 +134,6 @@ fileprivate extension BottomSheetView {
         content
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity)
-            .padding(.bottom, UIApplication.safeArea.bottom)
             .padding(.bottom, 50)
             .background(Color.white)
             .cornerRadius(24, corners: [.topLeft, .topRight])
@@ -176,7 +175,11 @@ fileprivate struct RoundedCorner: Shape {
     var corners: UIRectCorner = .allCorners
 
     func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let path = UIBezierPath(
+            roundedRect: rect,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
         return Path(path.cgPath)
     }
 }
