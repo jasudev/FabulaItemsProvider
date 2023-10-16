@@ -28,6 +28,22 @@ public class ItemsProvider {
     public init() {}
     public var items: [ItemData] {
         [
+            ItemData(id: 280, category: .uiux,
+                     section: "Container",
+                     createDate: "2023-10-15",
+                     title: "SwitchComponent",
+                     caption: "How to create a Switch custom component in SwiftUI.",
+                     creator: Contributor.jasu.name,
+                     tags: "component",
+                     view: FAnyView(P280_SwitchComponent())),
+            ItemData(id: 279, category: .uiux,
+                     section: "Container",
+                     createDate: "2023-10-15",
+                     title: "CheckboxComponent",
+                     caption: "How to create a Checkbox custom component in SwiftUI.",
+                     creator: Contributor.jasu.name,
+                     tags: "component",
+                     view: FAnyView(P279_CheckboxComponent())),
             ItemData(id: 278, category: .play,
                      section: "Animation",
                      createDate: "2022-12-06",
