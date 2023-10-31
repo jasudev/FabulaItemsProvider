@@ -24,10 +24,18 @@ public class ItemsProvider {
         }
         #endif
     }
-    
+
     public init() {}
     public var items: [ItemData] {
         [
+            ItemData(id: 281, category: .uiux,
+                     section: "Text",
+                     createDate: "2023-10-29",
+                     title: "SubstringHighlighter",
+                     caption: "How to highlight specific characters in text.",
+                     creator: Contributor.jasu.name,
+                     tags: "extension",
+                     view: FAnyView(P281_TextSubstringHighlighter())),
             ItemData(id: 280, category: .uiux,
                      section: "Container",
                      createDate: "2023-10-15",
