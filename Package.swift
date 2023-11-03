@@ -17,7 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.4.4"),
-        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", .branch("master")),
+        .package(url: "https://github.com/SDWebImage/SDWebImageSwiftUI.git", from: "2.1.0"),
         .package(url: "https://github.com/jasudev/UnsplashProvider.git", .branch("main")),
         .package(url: "https://github.com/jasudev/Scroller.git", .branch("main")),
         .package(url: "https://github.com/jasudev/AnimateText.git", .branch("main")),

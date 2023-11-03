@@ -28,6 +28,14 @@ public class ItemsProvider {
     public init() {}
     public var items: [ItemData] {
         [
+            ItemData(id: 282, category: .uiux,
+                     section: "Text",
+                     createDate: "2023-11-03",
+                     title: "DebounceText",
+                     caption: "How to debounce text that changes.",
+                     creator: Contributor.jasu.name,
+                     tags: "debounce, text, textfield",
+                     view: FAnyView(P282_DebouncedText())),
             ItemData(id: 281, category: .uiux,
                      section: "Text",
                      createDate: "2023-10-29",
