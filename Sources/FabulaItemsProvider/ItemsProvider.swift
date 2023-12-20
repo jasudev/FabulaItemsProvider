@@ -27,7 +27,14 @@ public class ItemsProvider {
 
     public init() {}
     public var items: [ItemData] {
-        [
+        [   ItemData(id: 283, category: .uiux,
+                  section: "Animation",
+                  createDate: "2023-12-19",
+                  title: "CatchCat",
+                  caption: "Catch a cat running away",
+                  creator: Contributor.henry.name,
+                  tags: "animation, random, interactive",
+                  view: FAnyView(P283_CatchCat())),
             ItemData(id: 282, category: .uiux,
                      section: "Text",
                      createDate: "2023-11-03",
