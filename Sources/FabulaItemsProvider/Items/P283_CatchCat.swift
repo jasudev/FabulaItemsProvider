@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct P283_CatchCat: View {
-    @State var score = 0
+    
     @State var offsetX : Double = .random(in: 0...1)
     @State var offsetY : Double = .random(in: 0...1)
     @State var degree : Double = 0
@@ -20,17 +20,17 @@ public struct P283_CatchCat: View {
             .padding(EdgeInsets(top: 30, leading: 0, bottom: 0, trailing: 0))
         GeometryReader { screen in
             cat
-                .frame(width: 70, height: 70)
-                .offset(x: screen.size.width * offsetX,
+                .onTapGesture {
+                    score += 1
+                }
+                .position(x: screen.size.width * offsetX,
                         y: screen.size.height * offsetY)
                 .rotationEffect(Angle(degrees: degree))
                 .onAppear {
                    runaway()
-                    withAnimation(.linear(duration: animationDuration * 3).repeatForever()) {
+                    withAnimation(.linear(duration: animationDuration * 2).repeatForever()) {
                         degree += 360
                     }
-                }.onTapGesture {
-                    score += 1
                 }
         }
  
@@ -52,21 +52,15 @@ public struct P283_CatchCat: View {
 
 
 fileprivate struct Cat: View {
-    
-    @State var catImage = "cat"
-    @State var isTapped = false
-    var body: some View {
-        if isTapped {
-            Image(systemName: "cat.fill")
+        var body: some View {
+        Image(systemName: "cat")
                 .resizable()
-        } else {
-            Image(systemName: "cat")
-                .resizable()
-        }
-        
+                .frame(width: 70, height: 70)
+            
     }
-    
 }
+
+fileprivate var score = 0
 
 #Preview {
     P283_CatchCat()
