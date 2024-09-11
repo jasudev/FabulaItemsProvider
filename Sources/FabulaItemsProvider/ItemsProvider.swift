@@ -27,7 +27,15 @@ public class ItemsProvider {
 
     public init() {}
     public var items: [ItemData] {
-        [   ItemData(id: 283, category: .uiux,
+        [   ItemData(id: 284, category: .uiux,
+                     section: "Animation",
+                     createDate: "2024-09-11",
+                     title: "GlitchEffect",
+                     caption: "Dynamic glitch effect for images and text. Create cyberpunk-inspired visual distortions.",
+                     creator: Contributor.regi93.name,
+                     tags: "animation, text, image",
+                     view: FAnyView(P284_GlitchEffect())),
+            ItemData(id: 283, category: .uiux,
                   section: "Animation",
                   createDate: "2023-12-19",
                   title: "CatchCat",
