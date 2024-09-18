@@ -16,11 +16,13 @@ public struct Contributor {
         Contributor.jasu,
         Contributor.soccer01,
         Contributor.tgeisse,
-        Contributor.henry
+        Contributor.henry,
+        Contributor.regi93
     ]
     
     public static let jasu = ContributorData(name: "jasu", location: "Korea", email: "jasudev@gmail.com", link: "https://github.com/jasudev", imageName: "jasu")
     public static let soccer01 = ContributorData(name: "soccer01", location: "Korea", email: "cudo0159@gmail.com", link: nil, imageName: nil)
     public static let tgeisse = ContributorData(name: "tgeisse", location: "United States", email: nil, link: "https://github.com/tgeisse", imageName: nil)
     public static let henry = ContributorData(name: "henry", location: "Korea", email: "wcbe9745@naver.com", link: "https://github.com/lemona-97", imageName: nil)
+    public static let regi93 = ContributorData(name: "regi93", location: "Korea", email: "hellgey777@naver.com", link: "https://github.com/regi93", imageName: nil)
 }
