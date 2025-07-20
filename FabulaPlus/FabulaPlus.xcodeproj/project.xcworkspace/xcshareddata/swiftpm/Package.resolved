@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire.git",
         "state": {
           "branch": null,
-          "revision": "d120af1e8638c7da36c8481fd61a66c0c08dc4fc",
-          "version": "5.4.4"
+          "revision": "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+          "version": "5.10.2"
         }
       },
       {
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/jasudev/AxisContribution.git",
         "state": {
           "branch": "main",
-          "revision": "b7a54b514422c1455ea94dc6e7451fd652aac657",
+          "revision": "219ca810cd7ea40fea2813bc313c2239133c61f3",
           "version": null
         }
       },
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/jasudev/AxisRatingBar.git",
         "state": {
           "branch": "main",
-          "revision": "e4468c33376085ddd40f27b1c36b48b77bd626cc",
+          "revision": "edc48620a2cd9f6b3cec0642ebcac4a6cf6d0e56",
           "version": null
         }
       },
@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/jasudev/AxisSegmentedView.git",
         "state": {
           "branch": "main",
-          "revision": "5114779f1a31cac0e7fd9ced928ad8dc4875bfa0",
+          "revision": "44e42f5766fe3fd1dda6b1a3f2047127f9e51b2e",
           "version": null
         }
       },
@@ -69,16 +69,16 @@
         "repositoryURL": "https://github.com/jasudev/AxisTooltip.git",
         "state": {
           "branch": "main",
-          "revision": "adb25edec8dadc92925dbe2d6df29a16e279f299",
+          "revision": "2c83b754b4e257a86a03a29f199b15a48410be48",
           "version": null
         }
       },
       {
         "package": "Lottie",
-        "repositoryURL": "https://github.com/airbnb/lottie-ios.git",
+        "repositoryURL": "https://github.com/airbnb/lottie-spm.git",
         "state": {
-          "branch": "master",
-          "revision": "0ba8b64d572b37966309bf5705afe8e6aa76b7e0",
+          "branch": "main",
+          "revision": "04f2fd18cc9404a0a0917265a449002674f24ec9",
           "version": null
         }
       },
@@ -87,7 +87,7 @@
         "repositoryURL": "https://github.com/jasudev/LottieUI.git",
         "state": {
           "branch": "main",
-          "revision": "e45088d28a769bff3acf4e649c1c9e32c7edf081",
+          "revision": "0cd5b54a1c8467b19c01f56395aec179087b62e2",
           "version": null
         }
       },
@@ -96,7 +96,7 @@
         "repositoryURL": "https://github.com/jasudev/Scroller.git",
         "state": {
           "branch": "main",
-          "revision": "61dbc21640964286759e2799670d3dc5c50f610b",
+          "revision": "a825313309c2fc6964b50edc83867370ad08bb47",
           "version": null
         }
       },
@@ -105,8 +105,8 @@
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "1f06ef5007b6a580b3873ed2adee19e05d3b215a",
-          "version": "5.18.3"
+          "revision": "b62cb63bf4ed1f04c961a56c9c6c9d5ab8524ec6",
+          "version": "5.21.1"
         }
       },
       {
@@ -114,8 +114,8 @@
         "repositoryURL": "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
         "state": {
           "branch": null,
-          "revision": "5f025e54a03d3d33dff24d7a19331f446f00ed9d",
-          "version": "2.2.4"
+          "revision": "53573d6dd017e354c0e7d8f1c86b77ef1383c996",
+          "version": "2.2.7"
         }
       },
       {
@@ -123,7 +123,7 @@
         "repositoryURL": "https://github.com/jasudev/UnsplashProvider.git",
         "state": {
           "branch": "main",
-          "revision": "4c2ff4524f4f8a855a6329f289434b123c2d1b96",
+          "revision": "11e624bcc2d8c402fa25695fc34699419c3283d1",
           "version": null
         }
       }

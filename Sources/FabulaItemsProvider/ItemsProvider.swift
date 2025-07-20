@@ -14,20 +14,36 @@ public class ItemsProvider {
     public static let shared = ItemsProvider()
     
     public var itemsByPlatform: [ItemData] {
-        #if os(iOS)
+#if os(iOS)
         items.filter { item in
             item.platformType == .iOS || item.platformType == .both
         }
-        #else
+#else
         items.filter { item in
             item.platformType == .macOS || item.platformType == .both
         }
-        #endif
+#endif
     }
-
+    
     public init() {}
     public var items: [ItemData] {
-        [   ItemData(id: 284, category: .uiux,
+        [   ItemData(id: 286, category: .study,
+                     section: "Animation",
+                     createDate: "2025-07-20",
+                     title: "Parallax Poster",
+                     caption: "Interactive daily routine timeline with parallax scroll effects",
+                     creator: Contributor.jasu.name,
+                     tags: "timeline, parallax, animation, dark, daily",
+                     view: FAnyView(P286_ParallaxPoster())),
+            ItemData(id: 285, category: .study,
+                    section: "Cards",
+                    createDate: "2025-07-20",
+                    title: "Financial Card",
+                    caption: "Interactive financial dashboard with animated bar chart and earnings display",
+                    creator: Contributor.jasu.name,
+                    tags: "finance,dashboard,chart,animation,card",
+                    view: FAnyView(P285_FinancialCard())),
+            ItemData(id: 284, category: .uiux,
                      section: "Animation",
                      createDate: "2024-09-11",
                      title: "GlitchEffect",
@@ -36,13 +52,13 @@ public class ItemsProvider {
                      tags: "animation, text, image",
                      view: FAnyView(P284_GlitchEffect())),
             ItemData(id: 283, category: .uiux,
-                  section: "Animation",
-                  createDate: "2023-12-19",
-                  title: "CatchCat",
-                  caption: "Catch a cat running away",
-                  creator: Contributor.henry.name,
-                  tags: "animation, random, interactive",
-                  view: FAnyView(P283_CatchCat())),
+                     section: "Animation",
+                     createDate: "2023-12-19",
+                     title: "CatchCat",
+                     caption: "Catch a cat running away",
+                     creator: Contributor.henry.name,
+                     tags: "animation, random, interactive",
+                     view: FAnyView(P283_CatchCat())),
             ItemData(id: 282, category: .uiux,
                      section: "Text",
                      createDate: "2023-11-03",

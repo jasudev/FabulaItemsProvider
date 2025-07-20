@@ -96,11 +96,12 @@ public struct P231_AxisContribution: View {
             .frame(width: rowSize, height: rowSize)
     }
     
-    private func getDates() -> [Date] {
-        var sequenceDatas = [Date]()
+    private func getDates() -> [Date: ACData] {
+        var sequenceDatas = [Date: ACData]()
         for _ in 0..<300 {
             let date = Date.randomBetween(start: Date().dateHalfAyear, end: Date())
-            sequenceDatas.append(date)
+            let data = ACData(date: date, count: Int.random(in: 0...4))
+            sequenceDatas[date] = data
         }
         return sequenceDatas
     }
